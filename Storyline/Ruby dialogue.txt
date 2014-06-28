@@ -1,0 +1,120 @@
+**Note TQ stands for Thought Quote (i.e. should appear as a thought bubble, not a speech bubble**
+
+**Note characters speak both in Ruby code, and in ‘regular’ words**
+
+Ruby (TQ): Where am I?
+Ruby (TQ): Maybe that ghost can help me…
+
+Ghost: puts “Hello”
+Ghost: Hello
+
+Ruby (TQ): I need to use the Ruby language to talk. In Ruby, a group of words or letters make a string. Here are some strings: “Ruby”, “Hello, world”, “Bacon pancakes”
+Ruby (TQ): When you use the command ‘puts’, it tells me to say the words in the string.
+Ruby (TQ): Please type: puts “Hello” to help me say hello. 
+
+Ruby: puts “Hello”
+Ruby: Hello
+
+Ghost: puts “What is your name?”
+Ghost: What is your name?
+
+Ruby (TQ): Please type: puts “My name is Ruby”
+
+Ruby: puts “My name is Ruby”
+Ruby: Ruby
+
+Ghost: puts “My name is Van Ghost”
+Ghost: My name is Van Ghost
+Ghost: puts “Do you need help fixing your spaceship?”
+Ghost: Do you need help fixing your spaceship?
+
+Ruby (TQ): Please type: puts “Yes, please”
+
+Ruby: puts “Yes, please”
+Ruby: Yes, please
+
+Ghost: puts “Find rubies to fix your spaceship! Keep exploring and you’ll find some.”
+Ghost: Find rubies to fix your spaceship! Keep exploring and you’ll find some.
+
+Ghost: puts “You should put your rubies in the bank”
+Ghost: You should put your rubies in the bank
+
+Ruby (TQ): Let’s use the Ruby language to keep track of my rubies
+Ruby (TQ): Please type: rubies = 3 to put my 3 rubies in the bank
+
+Ghost: puts “Here is a ruby for you”
+Ghost: Here is a ruby for you
+
+Ruby (TQ): Let’s use Ruby to add this ruby to the bank
+Ruby (TQ): Please type: rubies += 1 to add my ruby to the bank
+
+Ghost: puts “Explore the world and find more rubies!”
+Ghost: Explore the world and find more rubies!
+Ghost: puts “Good luck!”
+Ghost: Good luck!
+
+Ruby (TQ): Please help me say “Thank you”
+
+Ruby: puts “Thank you”
+Ruby: Thank you
+
+Ruby (TQ): Please type: puts “Thank you”
+
+Mechanic: puts “Hello”
+Mechanic: Hello
+
+Ruby (TQ): Please help me say “Hello”
+
+Ruby: puts “Hello”
+Ruby: Hello
+
+Ruby (TQ): Please type: puts “Hello” to help me say hello
+
+Mechanic: puts “My toolbox is a mess! The letters are lost and confused!”
+Mechanic: My toolbox is a mess! The letters are lost and confused!
+
+Ruby (TQ): Please help me say “I can help you”
+
+Ruby: puts “I can help you”
+Ruby: I can help you
+
+Ruby (TQ): Please type: puts “I can help you”
+
+Ruby (TQ): Looks like the screwdriver is backwards. To flip a string around in Ruby, you can use the command “reverse”.
+Ruby (TQ): Try typing this: “revidrwercs”.reverse
+
+Mechanic: puts “Good job! Way to turn things around!”
+Mechanic: Good job! Way to turn things around!
+
+Ruby (TQ): Looks like the bolts are all in uppercase. To make a string lowercase in Ruby, you can use the command “downcase”.
+Ruby (TQ): Try typing this: “BOLTS”.downcase
+
+Mechanic: puts “Nicely done!”
+Mechanic: Nicely done
+
+Ruby (TQ): Looks like the Super Awesome Spaceship Tool (SAST) needs to be in uppercase. To make a string uppercase in Ruby, you can use the command “up case”.
+Ruby (TQ): Try typing this: “sast”.upcase
+
+Mechanic: puts “Out of this world!”
+Mechanic: Out of this world!
+
+Ruby (TQ): Looks like the Allen key letters are all in the wrong case. To switch all the cases in a string in the Ruby language, you can use the command “swapcase”.
+Ruby (TQ): Try typing this: “aLLEN KEY”.swapcase 
+
+Mechanic: puts “You’ve got the key to success”
+Mechanic: You’ve got the key to success
+
+Ruby (TQ): Uh oh. The laser beam is both uppercase and backwards. What now?
+Ruby (TQ): You can use the Ruby language to change a string in many ways at once. Try typing this: “MAEB RESAL”.downcase.reverse
+
+Mechanic: puts “Smashing work”
+Mechanic: Smashing work
+
+Mechanic: puts “Uh oh. There’s only one nail in the toolbox. You need 5 nails to fix your spaceship.”
+Mechanic: Uh oh. There’s only one nail in the toolbox. You need 5 nails to fix your spaceship.
+
+Ruby (TQ): To repeat a string in the Ruby language, you can use the multiplication sign *. Try typing this: “nail” * 5
+
+Mechanic: puts “Nailed it!”
+Mechanic: Nailed it
+

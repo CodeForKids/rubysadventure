@@ -1,0 +1,266 @@
+
+Ruby the robot girl
+
+Motivation: fixing her spaceship
+
+Game start: Ruby crash-lands on a strange planet
+Scene: outdoor field/sky/grass
+
+Pop-up with arrow keys/spacebar in sky
+
+Note: “tq” refers to “thought quotes” i.e. a thought bubble for Ruby to communicate with the player
+Could also have a “HELP” button above the CLI: if clicked, displays correct code (or various levels of hints)
+
+***Lesson 1: moving around***
+
+GOAL: teach basic gameplay mechanics
+OBJECTIVE: use the arrow keys and spacebar to move Ruby
+
+Ruby:
+thought quote: “Where am I?”
+tq: “Maybe that ghost can help me…”
+
+If player doesn’t use arrow keys to move Ruby, prompt again with popup:
+“Use arrow keys to move Ruby, space bar to jump
+
+**Action** player moves Ruby toward ghost
+
+***Lesson 2: the ‘puts’ command***
+
+GOAL: teach the ‘puts’ command
+OBJECTIVE: 
+- have players use the puts command to make Ruby speak
+- introduce the concept of a string
+
+Ghost: (Ruby code first, output second)
+puts “Hello”
+Hello
+
+Ruby:
+tq: I need to use the Ruby language to talk. In Ruby, a group of words or letters make a string. Here are some strings: “Ruby”, “Hello, world”, “Bacon pancakes”
+(the word ‘string’ should be in a different colour to highlight it)
+tq: When you use the command puts, it tells me to say the words in the string.
+(the word ‘puts’ should be in a different colour to highlight it)
+tq: Please type: puts “Hello” to help me say hello. 
+(with puts “Hello” in a different colour)
+
+**Action** player types puts “Hello” into the command line interface
+
+if player types the correct command, Ruby says “Hello” (like ghost, with Ruby code first and output second)
+puts “Hello”
+Hello
+
+if player types the wrong command, repeat tq x 2 above
+
+Ghost says:
+puts “What is your name?”
+What is your name?
+
+Ruby says:
+tq: “Please type: puts “My name is ____””
+
+**Action** player types puts “Name” into the CLI
+
+if player has typed their name, Ruby says:
+puts “My name is ____”
+My name is _____
+
+Ghost says:
+puts “My name is Van Ghost”
+My name is Van Ghost
+
+if player types the wrong command, repeat tq above
+
+Ghost says:
+puts “Do you need help fixing your spaceship?”
+Do you need help fixing your spaceship?
+
+**Action** player types puts “Yes” into the CLI
+
+if player types the correct command, Ruby says 
+puts “Yes”
+Yes
+
+if player types the wrong command, prompt with Ruby:
+tq: “Please type puts “Yes””
+(puts “Yes” should be in a highlight colour)
+
+Ghost says:
+puts “Find rubies to fix your spaceship! Keep exploring and you’ll find some.”
+
+**Action** player uses arrow keys/spacebar to move Ruby around the environment collecting rubies
+
+Once Ruby has 3 (?) rubies, wrench re-appears
+
+***Lesson 3: numeric variables***
+
+GOAL: introduce numeric variables
+OBJECTIVE: have players create the numeric variable “rubies” and use it to store the rubies they collect in the game
+
+Ghost:
+puts “Put your rubies in the bank”
+Put your rubies in the bank
+
+Ruby:
+tq: “I need to use Ruby language again. In Ruby, a number is call a numeric variable. Let’s make a way to keep track of my rubies.”
+tq: “Please type: “rubies = 3” to put my 3 rubies in the bank.”
+
+**Action**  player types “rubies = 3”, then a small icon appears with rubies set to 3
+if player does not type the correct command, repeat tq x 2 above
+
+Ghost gives Ruby a ruby
+Ghost says:
+puts “Here is a ruby for you”
+Here is a ruby for you
+
+Ruby:
+tq: “I need to add this ruby to the bank.”
+tq: “Please type: “rubies +=1” to add my ruby to the bank.”
+
+**Action** player types “rubies += 1”, then the rubies value changes from 3 to 4
+if player does not type the correct command, repeat tq x 2 above
+
+Ghost says:
+puts “Explore the world and find more rubies”
+Explore the world and find more rubies
+
+Ghost says:
+puts “Good luck!”
+Good luck
+
+Ruby:
+tq: “Please say “Thank you””
+
+**Action** player types: puts “Thank you”
+if player does not type the correct command, repeat tq above
+
+***Interlude*** Ruby runs/jumps around collecting rubies
+
+***Lesson 4: Tricks with text***
+
+GOAL: introduce various text transformations possible in Ruby
+OBJECTIVE: 
+ - players find words in a word game
+ - players learn how to implement text transformation with Ruby: uppercase, lowercase, reverse, swapcase, and text duplication
+
+After walking around collecting rubies, Ruby comes across a repair shop run by a ghost mechanic.
+
+Mechanic says:
+puts “Hello”
+Hello
+
+**Action** player types: puts “Hello”
+if correct, Ruby says “Hello”
+if incorrect, player is prompted with tq: “Please type: puts “Hello” to help me say hello” (with puts “Hello” in a different colour)
+
+The mechanic shows Ruby a toolbox, opens and words spring out (words will be mixed up wrt case and order)
+
+Words in toolbox are:
+[revidwercs, BOLTS, sast, aLLEN KEY, MAEB RESAL, nail]
+
+
+Mechanic says:
+puts “My toolbox is a mess! The letters are all out of place.”
+My toolbox is a mess! The letters are all out of place.
+
+Ruby says:
+tq: Please help me say “I can help you”
+
+**Action** the player will type: puts “I can help you”
+if correct, Ruby says “I can help you”
+if incorrect, player is prompted with tq: “Please type: puts “I can help you” “
+
+Ruby:
+tq: “Looks like the screwdriver is backwards. To flip a string around in the Ruby language, you can use the command “reverse”.”
+tq: “Try typing this: “revidrwercs”.reverse “
+
+**Action**  the player will type: “revidrwercs”.reverse
+if correct, the mechanic says “Good job!” and the word “revidrwercs” on the screen flips around to the correct orientation
+if incorrect, player is prompted again
+
+Ruby:
+tq: “Looks like the bolts are all in uppercase. To make a string lowercase in the Ruby language, you can use the command “downcase”.”
+tq: “Try typing this: “BOLTS”.downcase “
+
+**Action** the player will type: “BOLTS”.downcase
+if correct, the mechanic says “Good job!” and the word “BOLTS” on the screen changes to lowercase
+if incorrect, player is prompted again
+
+Ruby:
+tq: “Looks like the Super Awesome Spaceship Tool (SAST) needs to be in uppercase. To make a string uppercase in the Ruby language, you can use the command “up case”.”
+tq: “Try typing this: “sast”.upcase “
+
+**Action** the player will type: “sast”.upcase
+if correct, the mechanic says “Good job!” and the word “sast” on the screen changes to uppercase
+if incorrect, player is prompted again
+
+Ruby:
+tq: “Looks like the Allen key letters are all in the wrong case. To switch all the cases in a string in the Ruby language, you can use the command “swapcase”.”
+tq: “Try typing this: “aLLEN KEY”.swapcase “
+
+**Action** the player will type: “aLLEN KEY”.swapcase
+if correct, the mechanic says “Good job!” and the word “aLLEN KEY” on the screen changes to “Allen key”
+if incorrect, player is prompted again
+
+Ruby:
+tq: “Uh oh. The laser beam is both uppercase and backwards. What now?”
+tq: You can use the Ruby language to change a string in many ways at once. Try typing this: “MAEB RESAL”.downcase.reverse
+
+**Action** the player will type: “MAEB RESAL”.downcase.reverse
+if correct, the mechanic says “Good job!” and the word “MAEB RESAL” changes to “laser beam”
+
+Hammer:
+puts “Uh oh. There’s only one nail in the toolbox. You need 5 nails to fix your spaceship.”
+Uh oh. There’s only one nail in the toolbox. You need 5 nails to fix your spaceship.
+
+Ruby:
+tq: “To repeat a string in the Ruby language, you can use the multiplication sign *.  Try typing this: “nail” * 5 “
+
+**Action** the player will type: “nail” * 5
+if correct, the mechanic says “Good job!” and the word “nail” now appears 5 times
+if incorrect, player is prompted again
+
+
+
+ 
+
+***Lesson 5: Operators***
+
+GOAL: introduce symbols (+, -, *, /, !) and signs (>, <)
+OBJECTIVE: player will solve arithmetic puzzles in order to get rubies from ?birds
+
+While running through the environment, Ruby encounters different coloured birds
+
+
+***Lesson ???: Loops***
+
+- can use a decrementing loop to countdown Ruby’s rocketship for blastoff
+
+
+*************
+
+***Lesson ???: Arrays***
+
+Can explore concepts of:
+- using string.length to give the length of a string
+- finding the nth letter in an array
+- use index to find a word in a string (for example…)
+
+Ruby says:
+tq: “Oh no! There are too many letters.”
+tq: “I can use the Ruby language to find the screwdriver. All the letters in the toolbox make up a string. To find the word “screwdriver” in the string called “toolbox”, you can type:
+toolbox.index (“screwdriver”)
+“
+(the word “string” will have a different colour, as well as the command)
+
+**Action** the player will type:
+toolbox.index (“screwdriver”)
+if correct, the hammer will say “Good Job” (…)
+
+
+
+
+
+
+
+

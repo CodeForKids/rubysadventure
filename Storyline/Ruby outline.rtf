@@ -1,0 +1,309 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1265\cocoasubrtf200
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\froman\fcharset0 Times-Roman;}
+{\colortbl;\red255\green255\blue255;}
+\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural
+
+\f0\fs24 \cf0 \
+
+\b Ruby the robot girl
+\b0 \
+\
+Motivation: fixing her spaceship\
+\
+Game start: Ruby crash-lands on a strange planet\
+Scene: outdoor field/sky/grass\
+\
+Pop-up with arrow keys/spacebar in sky\
+\
+Note: \'93tq\'94 refers to \'93thought quotes\'94 i.e. a thought bubble for Ruby to communicate with the player\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural
+\cf0 Could also have a \'93HELP\'94 button above the CLI: if clicked, displays correct code (or various levels of hints)\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural
+\cf0 \
+
+\b ***Lesson 1: moving around***
+\b0 \
+\
+GOAL: teach basic gameplay mechanics\
+OBJECTIVE: use the arrow keys and spacebar to move Ruby\
+\
+Ruby:\
+thought quote: \'93Where am I?\'94\
+tq: \'93Maybe that ghost can help me\'85\'94\
+\
+If player doesn\'92t use arrow keys to move Ruby, prompt again with popup:\
+\'93Use arrow keys to move Ruby, space bar to jump\
+\
+**Action** player moves Ruby toward ghost\
+
+\b \
+***Lesson 2: the \'91puts\'92 command***
+\b0 \
+\
+GOAL: teach the \'91puts\'92 command\
+OBJECTIVE: \
+- have players use the puts command to make Ruby speak\
+- introduce the concept of a string\
+\
+Ghost: (Ruby code first, output second)\
+puts \'93Hello\'94\
+Hello\
+\
+Ruby:\
+tq: I need to use the Ruby language to talk. In Ruby, a group of words or letters make a string. Here are some strings: \'93Ruby\'94, \'93Hello, world\'94, \'93Bacon pancakes\'94\
+(the word \'91string\'92 should be in a different colour to highlight it)\
+tq: When you use the command puts, it tells me to say the words in the string.\
+(the word \'91puts\'92 should be in a different colour to highlight it)\
+tq: Please type: puts \'93Hello\'94 to help me say hello. \
+(with
+\i  puts \'93Hello\'94
+\i0  in a different colour)\
+\
+**Action** player types 
+\i puts \'93Hello\'94
+\i0  into the command line interface\
+\
+if player types the correct command, Ruby says \'93Hello\'94 (like ghost, with Ruby code first and output second)\
+puts \'93Hello\'94\
+Hello\
+\
+if player types the wrong command, repeat tq x 2 above\
+\
+Ghost says:\
+puts \'93What is your name?\'94\
+What is your name?\
+\
+Ruby says:\
+tq: \'93Please type: puts \'93My name is ____\'94\'94\
+\
+**Action** player types puts \'93Name\'94 into the CLI\
+\
+if player has typed their name, Ruby says:\
+puts \'93My name is ____\'94\
+My name is _____\
+\
+Ghost says:\
+puts \'93My name is Van Ghost\'94\
+My name is Van Ghost\
+\
+if player types the wrong command, repeat tq above\
+\
+Ghost says:\
+puts \'93Do you need help fixing your spaceship?\'94\
+Do you need help fixing your spaceship?\
+\
+**Action** player types 
+\i puts \'93Yes\'94 
+\i0 into the CLI\
+\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural
+\cf0 if player types the correct command, Ruby says \
+puts \'93Yes\'94\
+Yes\
+\
+if player types the wrong command, prompt with Ruby:\
+tq: \'93Please type puts \'93Yes\'94\'94\
+(
+\i puts \'93Yes\'94
+\i0  should be in a highlight colour)\
+\
+Ghost says:\
+puts \'93Find rubies to fix your spaceship! Keep exploring and you\'92ll find some.\'94\
+\
+**Action** player uses arrow keys/spacebar to move Ruby around the environment collecting rubies\
+\
+Once Ruby has 3 (?) rubies, wrench re-appears\
+\
+
+\b ***Lesson 3: numeric variables***
+\b0 \
+\
+GOAL: introduce numeric variables\
+OBJECTIVE: have players create the numeric variable \'93rubies\'94 and use it to store the rubies they collect in the game\
+\
+Ghost says:\
+puts \'93Put your rubies in the bank\'94\
+Put your rubies in the bank\
+\
+Ruby:\
+tq: \'93I need to use Ruby language again. In Ruby, a number is call a numeric variable. Let\'92s make a way to keep track of my rubies.\'94\
+tq: \'93Please type: \'93rubies = 3\'94 to put my 3 rubies in the bank.\'94\
+\
+**Action**  player types \'93rubies = 3\'94, then a small icon appears with rubies set to 3\
+if player does not type the correct command, repeat tq x 2 above\
+\
+Ghost gives Ruby a ruby\
+Ghost says:\
+puts \'93Here is a ruby for you\'94\
+Here is a ruby for you\
+\
+Ruby:\
+tq: \'93I need to add this ruby to the bank.\'94\
+tq: \'93Please type: \'93rubies +=1\'94 to add my ruby to the bank.\'94\
+\
+**Action** player types \'93rubies += 1\'94, then the rubies value changes from 3 to 4\
+if player does not type the correct command, repeat tq x 2 above\
+\
+Ghost says:\
+puts \'93Explore the world and find more rubies\'94\
+Explore the world and find more rubies\
+\
+Ghost says:\
+puts \'93Good luck!\'94\
+Good luck\
+\
+Ruby:\
+tq: \'93Please say \'93Thank you\'94\'94\
+\
+**Action** player types: puts \'93Thank you\'94\
+if player does not type the correct command, repeat tq above\
+\
+***Interlude*** Ruby runs/jumps around collecting rubies\
+\
+
+\b ***Lesson 4: Tricks with text***\
+\
+
+\b0 GOAL: introduce various text transformations possible in Ruby\
+OBJECTIVE: \
+ - players find words in a word game\
+ - players learn how to implement text transformation with Ruby: uppercase, lowercase, reverse, swapcase, and text duplication\
+\
+After walking around collecting rubies, Ruby comes across a repair shop run by a mechanic.\
+\
+Mechanic says:\
+puts \'93Hello\'94\
+Hello\
+\
+**Action** player types: puts \'93Hello\'94\
+if correct, Ruby says \'93Hello\'94\
+if incorrect, player is prompted with tq: \'93Please type: puts \'93Hello\'94 to help me say hello\'94 (with puts \'93Hello\'94 in a different colour)\
+\
+The mechanic shows Ruby a toolbox, opens and words spring out (words will be mixed up wrt case and order)\
+\
+Words in toolbox are:\
+[revidwercs, BOLTS, sast, aLLEN KEY, MAEB RESAL, nail]\
+\
+\
+Mechanic says:\
+puts \'93My toolbox is a mess! The letters are all out of place.\'94\
+My toolbox is a mess! The letters are all out of place.\
+\
+Ruby says:\
+tq: Please help me say \'93I can help you\'94\
+\
+**Action** the player will type: puts \'93I can help you\'94\
+if correct, Ruby says \'93I can help you\'94\
+if incorrect, player is prompted with tq: \'93Please type: puts \'93I can help you\'94 \'93\
+\
+Ruby:\
+tq: \'93Looks like the screwdriver is backwards. To flip a string around in the Ruby language, you can use the command \'93reverse\'94.\'94\
+tq: \'93Try typing this: \'93revidrwercs\'94.reverse \'93\
+\
+**Action**  the player will type: \'93revidrwercs\'94.reverse\
+if correct, the mechanic says \'93Good job!\'94 and the word \'93revidrwercs\'94 on the screen flips around to the correct orientation\
+if incorrect, player is prompted again\
+\
+Ruby:\
+tq: \'93Looks like the bolts are all in uppercase. To make a string lowercase in the Ruby language, you can use the command \'93downcase\'94.\'94\
+tq: \'93Try typing this: \'93BOLTS\'94.downcase \'93\
+\
+**Action** the player will type: \'93BOLTS\'94.downcase\
+if correct, the mechanic says \'93Good job!\'94 and the word \'93BOLTS\'94 on the screen changes to lowercase\
+if incorrect, player is prompted again\
+\
+Ruby:\
+tq: \'93Looks like the Super Awesome Spaceship Tool (SAST) needs to be in uppercase. To make a string uppercase in the Ruby language, you can use the command \'93up case\'94.\'94\
+tq: \'93Try typing this: \'93sast\'94.upcase \'93\
+\
+**Action** the player will type: \'93sast\'94.upcase\
+if correct, the mechanic says \'93Good job!\'94 and the word \'93sast\'94 on the screen changes to uppercase\
+if incorrect, player is prompted again\
+\
+Ruby:\
+tq: \'93Looks like the Allen key letters are all in the wrong case. To switch all the cases in a string in the Ruby language, you can use the command \'93swapcase\'94.\'94\
+tq: \'93Try typing this: \'93aLLEN KEY\'94.swapcase \'93\
+\
+**Action** the player will type: \'93aLLEN KEY\'94.swapcase\
+if correct, the mechanic says \'93Good job!\'94 and the word \'93aLLEN KEY\'94 on the screen changes to \'93Allen key\'94\
+if incorrect, player is prompted again\
+\
+Ruby:\
+tq: \'93Uh oh. The laser beam is both uppercase and backwards. What now?\'94\
+tq: You can use the Ruby language to change a string in many ways at once. Try typing this: \'93MAEB RESAL\'94.downcase.reverse\
+\
+**Action** the player will type: \'93MAEB RESAL\'94.downcase.reverse\
+if correct, the mechanic says \'93Good job!\'94 and the word \'93MAEB RESAL\'94 changes to \'93laser beam\'94\
+\
+Mechanic:\
+puts \'93Uh oh. There\'92s only one nail in the toolbox. You need 5 nails to fix your spaceship.\'94\
+Uh oh. There\'92s only one nail in the toolbox. You need 5 nails to fix your spaceship.\
+\
+Ruby:\
+tq: \'93To repeat a string in the Ruby language, you can use the multiplication sign *.  Try typing this: \'93nail\'94 * 5 \'93\
+\
+**Action** the player will type: \'93nail\'94 * 5\
+if correct, the mechanic says \'93Good job!\'94 and the word \'93nail\'94 now appears 5 times\
+if incorrect, player is prompted again\
+\
+\
+\
+ \
+\
+
+\b ***Lesson 5: Operators***\
+\
+
+\b0 GOAL: introduce symbols (+, -, *, /, !) and signs (>, <)\
+OBJECTIVE: player will solve arithmetic puzzles in order to get rubies from ?birds\
+
+\b \
+
+\b0 While running through the environment, Ruby encounters different coloured birds\
+\
+
+\b \
+***Lesson ???: Loops***
+\b0 \
+\
+- can use a decrementing loop to countdown Ruby\'92s rocketship for blastoff\
+\
+\
+*************\
+\
+
+\b ***Lesson ???: Arrays***\
+\
+
+\b0 Can explore concepts of:\
+- using string.length to give the length of a string\
+- finding the nth letter in an array\
+- use index to find a word in a string (for example\'85)\
+\
+Ruby says:\
+tq: \'93Oh no! There are too many letters.\'94\
+tq: \'93I can use the Ruby language to find the screwdriver. All the letters in the toolbox make up a string. To find the word \'93screwdriver\'94 in the string called \'93toolbox\'94, you can type:\
+\pard\pardeftab720
+
+\f1 \cf0 toolbox.index (\'93screwdriver\'94)\
+\'93
+\f0 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural
+\cf0 (the word \'93string\'94 will have a different colour, as well as the command)\
+\
+**Action** the player will type:\
+toolbox.index (\'93screwdriver\'94)\
+if correct, the hammer will say \'93Good Job\'94 (\'85)\
+\
+\
+
+\b \
+\
+\
+
+\b0 \
+\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural
+\cf0 \
+}

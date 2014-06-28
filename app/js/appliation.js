@@ -3,7 +3,7 @@ $(document).ready(function(){
   // Editor For Information
   var editor = ace.edit("editor");
   editor.setTheme("ace/theme/twilight");
-  editor.getSession().setMode("ace/mode/ruby");
+  editor.getSession().setMode("ace/mode/text");
   editor.setReadOnly(true);
 
   window.editor = editor;

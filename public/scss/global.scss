@@ -1,0 +1,73 @@
+@charset "utf-8";
+
+/* == SASS: FONT STACKS == */
+$mainfont: 'Open Sans', sans-serif;
+$secondfont: 'PT Sans Narrow', sans-serif;
+
+/* == SASS: COLOURS == */
+
+$black: #000100;
+$black-semi-transparent: rgba(0, 1, 0, 0.87);
+$blue: #469ad0;
+$bluegray: #d9dee1;
+$lightblue: #f2f7fa;
+$orange: #ec7331;
+$accent: #e75113;
+$darkgray: #666;
+$medgray: #ccc;
+$white: #fff;
+$twitter: #00aced;
+$facebook: #3b5998;
+$linkedin: #007bb6; 
+$youtube: #e52d27;
+
+/* == SASS: MIXINS == */
+@mixin round($radius: 50%) {
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  -ms-border-radius: $radius;
+  -o-border-radius: $radius;
+  border-radius: $radius;
+}
+@mixin rotate($degrees) {
+  -moz-transform: rotate($degrees);
+  -o-transform: rotate($degrees);
+  -webkit-transform: rotate($degrees);
+}
+@mixin border-radius($radius: 4px) {
+    -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  -ms-border-radius: $radius;
+  -o-border-radius: $radius;
+  border-radius: $radius;
+}
+@mixin round($radius: 25%) {
+    -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  -ms-border-radius: $radius;
+  -o-border-radius: $radius;
+  border-radius: $radius;
+}
+@mixin roundedEdges($radius: 5%) {
+    -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  -ms-border-radius: $radius;
+  -o-border-radius: $radius;
+  border-radius: $radius;
+}
+
+/* == FONTS == */
+h1, h2, h3, h4, h5 { font-family: $mainfont; font-weight: bold; margin-bottom: 0.5em; }
+h1 small, h2 small, h3 small, h4 small, h5 small { color: $black; }
+body, p { font-family: $mainfont; font-size: 1.0em; line-height: 1.25em; }
+h1 { font-size: 2.0em; line-height: 1.25em; }
+h2 { font-size: 1.625em; line-height: 1.15384615em; }
+h3 { font-size: 1.375em; line-height: 1.13636364em; }
+h4 { font-size: 1.125em; line-height: 1.11111111em; }
+h5 { font-size: 1.0em; line-height: 1.25em; }
+.button { font-family: $secondfont; text-transform: uppercase; }
+a { color: $orange; text-decoration: underline; }
+a:visited { color: $accent; }
+a:hover { color: darken($orange, 20%); }
+.link-block { display: block; width: 100%; height: 100%; }
+.caps { text-transform: uppercase; }

@@ -5,10 +5,7 @@ class Level
   def initialize(file)
     json = JSON.parse File.read file
     @privileges = Privileges.new
-    @privileges.allow_method :print
-    @allowed_methods = Privileges::AllowedMethods.new
-    # @allowed_methods.allow (json["privileges"] || "")
-    @allowed_methods.allow_all
+    allow_methods(@privileges, json["privileges"] || "puts")
     @answers = json["answers"]
   end
 
@@ -34,6 +31,10 @@ class Level
 
   def check_answer(answer)
     {success:@answers[0] == answer, answer:@answers[0], user_answer:answer}
+  end
+
+  def allow_methods(priv, *methods)
+    methods.map {|m| priv.allow_method m.to_sym}
   end
 
 end

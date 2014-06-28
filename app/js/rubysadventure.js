@@ -72,9 +72,9 @@ function create() {
   player.body.setSize(130, 302);
   player.body.collideWorldBounds = true;
 
-  player.animations.add('left', [3, 2, 1, 0], 30, true);
+  player.animations.add('left', [2, 1, 0], 30, true);
   //player.animations.add('turn', [4], 30, true);
-  player.animations.add('right', [4, 5, 6, 7], 30, true);
+  player.animations.add('right', [5, 6, 7], 30, true);
   game.camera.follow(player);
 
   //bind inputs

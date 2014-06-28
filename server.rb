@@ -30,8 +30,8 @@ class RubysAdventure < Sinatra::Base
     json = JSON.parse(request.body.read).to_hash
     lvl = Level.new(level_path(params[:id]))
     code = my_json["code"] || ""
-    question_number = my_json["question_number"] || "1"
-    lvl.execute(question_number, code).to_json
+    question = json["question"].to_i || 1
+    lvl.execute(question, code).to_json
   end
 
   private

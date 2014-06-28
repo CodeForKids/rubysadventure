@@ -28,11 +28,33 @@ $(document).ready(function(){
       postToServer(value)
     }
   }, true);
+
+
+  editor.setValue("Type \"puts 'Hello World'\"");
 });
 
-function postToServer(message) {
-  $.get('/test?code=' + message, function(data) {
-    window.editor.setValue(data);
+function postToServer(code) {
+
+  $.ajax({
+    type: "POST",
+    url: '/levels/1/execute',
+    data:  JSON.stringify({ "code" : code }),
+    contentType: 'application/json'
+  }).done(function(data) {
+    parseResults(data);
     window.input_editor.gotoLine(0);
   });
+
+}
+
+function parseResults(data) {
+  json = JSON.parse(data);
+
+  var message = "";
+  if (json.success) {
+    message = "That was right! :)\n";
+  } else {
+    message = "That wasn't right :(\n"
+  }
+  window.editor.setValue(message);
 }

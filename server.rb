@@ -1,4 +1,5 @@
 require 'sinatra'
+require 'sass'
 require 'sinatra/assetpack'
 require 'sinatra/activerecord'
 require "rubygems"
@@ -26,7 +27,7 @@ class RubysAdventure < Sinatra::Base
   end
 
   post '/levels/:id/execute' do
-    my_json = JSON.parse(request.body.read).to_hash
+    json = JSON.parse(request.body.read).to_hash
     lvl = Level.new(level_path(params[:id]))
     code = my_json["code"] || ""
     question_number = my_json["question_number"] || "1"

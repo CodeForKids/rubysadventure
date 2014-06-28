@@ -37,6 +37,9 @@ var ground;
 function create() {
   //Enabled Arcade Physics system
   game.physics.startSystem(Phaser.Physics.ARCADE);
+  
+  //  Make the world larger than the actual canvas
+  game.world.setBounds(0, 0, window_width * 2, window_height);
 
   //Print images on canvas
   bg = game.add.tileSprite(0, 0, window_width, window_height, 'background');
@@ -48,7 +51,7 @@ function create() {
   addSprite(game, 'cloud2', 0.6, 0.5);
   addSprite(game, 'birds', 0.48, 0.1);
 
-  // The platforms group contains the ground and the 2 ledges we can jump on
+  // The platforms group contains the ground and possibly other ledges
   platforms = game.add.group();
 
   // We will enable physics for any object that is created in this group
@@ -75,10 +78,17 @@ function create() {
   player.animations.add('left', [2, 1, 0], 30, true);
   //player.animations.add('turn', [4], 30, true);
   player.animations.add('right', [5, 6, 7], 30, true);
+  //console.log(game.camera.deadzone);
   game.camera.follow(player);
+  game.camera.deadzone = new Phaser.Rectangle(window_width / 0.5, 0, window_width, window_height);
+ // game.camera.deadzone.setTo(window_width / 1.5, 0, window_width, window_height);
 
   //bind inputs
   cursors = game.input.keyboard.createCursorKeys();
+
+  //Camera stuff
+   player.anchor.setTo(0, 0.7);
+   game.camera.follow(player, Phaser.Camera.FOLLOW_LOCKON);
 }
 
 /* x and y are percents of the width/height in decimal from the top left corner */
@@ -92,14 +102,14 @@ function update() {
   player.body.velocity.x = 0;
 
   if (cursors.left.isDown) {
-    player.body.velocity.x = -150;
+    player.body.velocity.x = -300;
 
     if (facing != 'left') {
       player.animations.play('left');
       facing = 'left';
     }
   } else if (cursors.right.isDown) {
-    player.body.velocity.x = 150;
+    player.body.velocity.x = 300;
 
     if (facing != 'right') {
       player.animations.play('right');

@@ -2,6 +2,7 @@
 #logo, #logo img {
   height: 2.5em;
 }
+
 #logo {
   padding: 15px;
   position: fixed;
@@ -10,25 +11,26 @@
 html, body {
   background-color: #000100;
   margin: 0px;
+  overflow-x: scroll !important;
 }
 
 .editor {
-  position: absolute;
+  position: fixed;
   right: 0;
   font-size: 20px;
+  width: 30%;
+  min-width: 400px;
 }
 
 #editor {
   @extend .editor;
   bottom: 15%;
-  left: 70%;
   top: 0em;
 }
 
 #input_editor {
   @extend .editor;
   bottom: 0;
-  left: 70%;
   top: 85%;
 }
 

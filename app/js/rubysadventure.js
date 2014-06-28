@@ -1,4 +1,10 @@
-var game = new Phaser.Game($(window).width(), $(window).height(), Phaser.AUTO, '', {
+var window_width = $(window).width();
+var window_height = $(window).height();
+if (window_width < 1024) {
+  window_width = 1024;
+}
+
+var game = new Phaser.Game(window_width, window_height, Phaser.AUTO, '', {
   preload: preload,
   create: create,
   update: update
@@ -33,7 +39,7 @@ function create() {
   game.physics.startSystem(Phaser.Physics.ARCADE);
 
   //Print images on canvas
-  bg = game.add.tileSprite(0, 0, $(window).width(), $(window).height(), 'background');
+  bg = game.add.tileSprite(0, 0, window_width, window_height, 'background');
   bg.fixedToCamera = true;
 
   addSprite(game, 'spaceship', 0.32, 0.6);
@@ -80,7 +86,7 @@ function create() {
 /* x and y are percents of the width/height in decimal from the top left corner */
 
 function addSprite(game, sprite, x, y) {
-    game.add.sprite($(window).width() * x, $(window).height() * y, sprite);
+    game.add.sprite(window_width * x, window_height * y, sprite);
 }
 
 function update() {

@@ -3,6 +3,7 @@ require 'sinatra/assetpack'
 require 'sinatra/activerecord'
 require "rubygems"
 require "shikashi"
+require "sinatra/json"
 
 include Shikashi
 
@@ -10,7 +11,7 @@ class RubysAdventure < Sinatra::Base
   register Sinatra::AssetPack
   register Sinatra::ActiveRecordExtension
   helpers  Sinatra::JSON
-  
+
   set :root, File.dirname(__FILE__)
 
   enable :sessions
@@ -25,11 +26,12 @@ class RubysAdventure < Sinatra::Base
     erb :index
   end
 
-  get '/level/:id' do
-    "Hello World!"
+  get '/levels/:id' do
+
+    send_file "public/level#{params[:id].to_i}.json"
   end
 
-  post '/level/:id' do
+  post '/level/:id/execute' do
   end
 
   get '/test' do

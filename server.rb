@@ -2,10 +2,6 @@ require 'sinatra'
 require 'active_record'
 require 'sinatra/assetpack'
 
-class Question < ActiveRecord::Base
-
-end
-
 class RubysAdventure < Sinatra::Base
 
   assets {

@@ -6,8 +6,6 @@ require "shikashi"
 require "sinatra/json"
 require './level.rb'
 
-include Shikashi
-
 class RubysAdventure < Sinatra::Base
   register Sinatra::AssetPack
   register Sinatra::ActiveRecordExtension

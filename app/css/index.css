@@ -10,6 +10,10 @@ div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, p, blockquote, t
   margin: 0;
   padding: 0; }
 
+/* == HEADER == */
+header {
+  position: fixed; }
+
 .wrap {
   width: 100%; }
 
@@ -71,3 +75,11 @@ a:visited {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box; }
+
+/* == EDITOR == */
+#editor {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 60rem;
+  top: 4.1em; }

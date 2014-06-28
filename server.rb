@@ -12,8 +12,7 @@ class RubysAdventure < Sinatra::Base
 
   assets {
 
-    css :app , ['/css/*.css']
-    js :app , ['js/*.js']
+    css :app , ['/css/*.css']    js :app , ['js/*.js']
   }
   set :public_folder, 'public'
 
@@ -21,11 +20,11 @@ class RubysAdventure < Sinatra::Base
     erb :index
   end
 
-  get '/level/:id' do
+  get '/chapter/:cid/question/:qid' do
     "Hello World!"
   end
 
-  post '/level/:id' do
+  post '/chapter/:cid/question/:qid' do
   end
 
 end

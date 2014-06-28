@@ -58,7 +58,6 @@ function create() {
   ground = platforms.create(0, game.world.height - 64, 'ground');
   game.physics.enable(ground, Phaser.Physics.ARCADE);
 
-  var ground = platforms.create(0, game.world.height - 64, 'ground');
   // Scale it to fit the width of the game (the original sprite is 400x32 in size)
   ground.scale.setTo(2, 2);
 
@@ -73,9 +72,9 @@ function create() {
   player.body.setSize(130, 302);
   player.body.collideWorldBounds = true;
 
-  player.animations.add('left', [3, 2, 1], 30, true);
+  player.animations.add('left', [3, 2, 1, 0], 30, true);
   //player.animations.add('turn', [4], 30, true);
-  player.animations.add('right', [5, 6, 7], 30, true);
+  player.animations.add('right', [4, 5, 6, 7], 30, true);
   game.camera.follow(player);
 
   //bind inputs
@@ -89,7 +88,7 @@ function addSprite(game, sprite, x, y) {
 }
 
 function update() {
-  game.physics.arcade.collide(player, ground);
+  //game.physics.arcade.collide(player, ground);
   player.body.velocity.x = 0;
 
   if (cursors.left.isDown) {

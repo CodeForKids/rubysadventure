@@ -52,9 +52,9 @@ function parseResults(data) {
 
   var message = "";
   if (json.success) {
-    message = "That was right! :)\n";
+    message = "That was right! :)";
   } else {
-    message = "That wasn't right :(\n"
+    message = "That wasn't right :("
   }
-  window.editor.setValue(message);
+  window.editor.setValue(window.editor.getSession().getValue() + "\n" + message, 1);
 }

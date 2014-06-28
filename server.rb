@@ -12,7 +12,8 @@ class RubysAdventure < Sinatra::Base
 
   assets {
 
-    css :app , ['/css/*.css']    js :app , ['js/*.js']
+    css :app , ['/css/*.css']
+    js :app , ['js/*.js']
   }
   set :public_folder, 'public'
 

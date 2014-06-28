@@ -31,7 +31,11 @@ class RubysAdventure < Sinatra::Base
     lvl = Level.new(level_path(params[:id]))
     code = my_json["code"] || ""
     question = json["question"].to_i || 1
-    lvl.execute(question, code).to_json
+    resp = lvl.execute(question, code).to_json
+    if resp[:success]
+      session[:level][:question] = json["json"].to_i
+      session[:level][:id] = params[:id]
+    end
   end
 
   private

@@ -31,7 +31,9 @@ class RubysAdventure < Sinatra::Base
     send_file "public/level#{params[:id].to_i}.json"
   end
 
-  post '/level/:id/execute' do
+  post '/levels/:id/execute' do
+    my_json = JSON.parse(request.body.read).to_hash
+    json check_answer(params[:id], my_json["code"])
   end
 
   get '/test' do
@@ -47,15 +49,21 @@ class RubysAdventure < Sinatra::Base
   end
 
   private
+
   def with_captured_stdout
-  begin
-    old_stdout = $stdout
-    $stdout = StringIO.new('','w')
+    begin
+      old_stdout = $stdout
+      $stdout = StringIO.new('','w')
     yield
-    $stdout.string
-  ensure
-    $stdout = old_stdout
+      $stdout.string
+    ensure
+      $stdout = old_stdout
+    end
   end
-end
+
+  def check_answer(id, answer)
+    json = JSON.parse(File.read("public/level#{id.to_i}answers.json"))
+    {success:json["answer1"] == answer, answer:json["answer1"], user_answer:answer, json:json}
+  end
 
 end

@@ -32,50 +32,29 @@ function create() {
 
     bg = game.add.tileSprite(0, 0, $(window).width(), $(window).height(), 'background');
     bg.fixedToCamera = true;
-<<<<<<< HEAD
-    game.add.sprite(400, 419, 'spaceship');
-    game.add.sprite(-100, 100, 'cloud1');
-
-    game.add.sprite(750, 520, 'sun');
-
-    game.add.sprite(900, 378, 'cloud2');
-
-    game.add.sprite(650, 50, 'birds');
-    //  The platforms group contains the ground and the 2 ledges we can jump on
-    platforms = game.add.group();
- 
-    // Enables physics for any object that is created in this group
-=======
 
     addSprite(game, 'spaceship', 0.1, 0.2);
     addSprite(game, 'cloud1', 0.3, 0.4);
     addSprite(game, 'cloud2', 0.6, 0.1);
+    addSprite(game, 'sun', 0.8, 0.5);
+    addSprite(game, 'birds', 0.7, 0.05);
 
     // The platforms group contains the ground and the 2 ledges we can jump on
     platforms = game.add.group();
 
     // We will enable physics for any object that is created in this group
->>>>>>> b76a09239a04e6d2691b9172863b1aeded0efc1c
     platforms.enableBody = true;
 
     // Here we create the ground.
-<<<<<<< HEAD
     ground = platforms.create(0, game.world.height - 64, 'ground');
     game.physics.enable(ground, Phaser.Physics.ARCADE);
 
-=======
     var ground = platforms.create(0, game.world.height - 64, 'ground');
     // Scale it to fit the width of the game (the original sprite is 400x32 in size)
->>>>>>> b76a09239a04e6d2691b9172863b1aeded0efc1c
     ground.scale.setTo(2, 2);
 
     // This stops it from falling away when you jump on it
     ground.body.immovable = true;
-<<<<<<< HEAD
-    
-=======
-
->>>>>>> b76a09239a04e6d2691b9172863b1aeded0efc1c
     player = game.add.sprite(32, 32, 'robot');
     game.physics.enable(player, Phaser.Physics.ARCADE);
 

@@ -15,10 +15,6 @@ $(document).ready(function(){
   input_editor.renderer.setShowGutter(false);
   input_editor.focus();
 
-  // input_editor.on("blur",function(){
-  //   input_editor.focus();
-  // });
-
   window.input_editor = input_editor;
 
   input_editor.container.addEventListener("keydown", function(e){

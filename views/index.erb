@@ -1,27 +1,6 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <link rel="stylesheet" type="text/css" href="../css/index.css">
-    <script src="/js/ace/ace.js" type="text/javascript" charset="utf-8"></script>
-  </head>
-  <body>
-
-    <header class="wrap bg-black menu">
-      <div class="row">
-        <div class="columns">
-          <a href="/" class="left" id="hdr-logo" title="Go to Code For Kids Homepage">
-            <img alt="Logo" src="images/logo-8ac88df797d64f3668bb0a6d5d29dfeb.png">
-          </a>
-        </div>
-      </div>
-    </header>
-
-    <div id="editor"></div>
-    <script type="text/javascript">
-      var editor = ace.edit("editor");
-      editor.setTheme("ace/theme/twilight");
-      editor.getSession().setMode("ace/mode/ruby");
-    </script>
-
-  </body>
-</html>
+<div id="editor"></div>
+<script type="text/javascript">
+  var editor = ace.edit("editor");
+  editor.setTheme("ace/theme/twilight");
+  editor.getSession().setMode("ace/mode/ruby");
+</script>

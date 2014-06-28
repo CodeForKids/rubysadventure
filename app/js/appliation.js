@@ -33,7 +33,7 @@ function postToServer(code) {
   $.ajax({
     type: "POST",
     url: '/levels/1/execute',
-    data:  JSON.stringify({ "code" : code }),
+    data:  JSON.stringify({ "code" : code, "question": 1 }),
     contentType: 'application/json'
   }).done(function(data) {
     parseResults(data);

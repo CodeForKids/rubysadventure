@@ -33,6 +33,7 @@ class RubysAdventure < Sinatra::Base
     question = json["question"].to_i || 1
     resp = lvl.execute(question, code)
     if resp[:success]
+      session[:level] ||= {}
       session[:level][:question] = json["json"].to_i
       session[:level][:id] = params[:id]
     end

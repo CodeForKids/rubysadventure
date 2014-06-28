@@ -30,9 +30,16 @@ $(document).ready(function(){
   }, true);
 });
 
-function postToServer(message) {
-  $.get('/test?code=' + message, function(data) {
+function postToServer(code) {
+
+  $.ajax({
+    type: "POST",
+    url: '/levels/1/execute',
+    data:  JSON.stringify({ "code" : code }),
+    contentType: 'application/json'
+  }).done(function(data) {
     window.editor.setValue(data);
     window.input_editor.gotoLine(0);
   });
+
 }

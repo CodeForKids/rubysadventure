@@ -27,9 +27,9 @@ class RubysAdventure < Sinatra::Base
   end
 
   post '/levels/:id/execute' do
-    my_json = JSON.parse(request.body.read).to_hash
+    json = JSON.parse(request.body.read).to_hash
     lvl = Level.new(level_path(params[:id]))
-    lvl.execute(my_json["code"] || "").to_json
+    lvl.execute(json["code"] || "").to_json
   end
 
   private

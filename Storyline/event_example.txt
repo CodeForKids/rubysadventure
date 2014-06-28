@@ -1,0 +1,14 @@
+target: string
+action: target, params, ....
+action: target, params, ....
+target: string
+
+
+example
+
+target: question answered
+action: speak, bob
+action: open, door
+
+target: collision
+action: speak, ruby

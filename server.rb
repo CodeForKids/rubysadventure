@@ -40,7 +40,6 @@ class RubysAdventure < Sinatra::Base
   end
 
   private
-
   def level_path(id)
     "public/levels/#{id.to_i}.json"
   end

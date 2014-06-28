@@ -31,7 +31,9 @@ class Level
   end
 
   def check_answer(question_number, answer)
-    {success:@answers[question_number.to_i - 1] == answer, answer:@answers[question_number.to_i - 1], user_answer:answer.strip}
+    actual_answer = @answers[question_number.to_i - 1].strip
+    success = actual_answer == answer.strip
+    {success: success, answer: actual_answer, user_answer:answer.strip}
   end
 
   def allow_methods(priv, *methods)

@@ -25,7 +25,6 @@ $(document).ready(function(){
     }
   }, true);
 
-
   editor.setValue("Type \"puts 'Hello World'\"");
 });
 

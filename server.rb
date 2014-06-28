@@ -1,6 +1,6 @@
 require 'sinatra'
 require 'sinatra/assetpack'
-
+require 'sinatra/activerecord'
 
 class RubysAdventure < Sinatra::Base
   register Sinatra::AssetPack

@@ -9,7 +9,8 @@ include Shikashi
 class RubysAdventure < Sinatra::Base
   register Sinatra::AssetPack
   register Sinatra::ActiveRecordExtension
-
+  helpers  Sinatra::JSON
+  
   set :root, File.dirname(__FILE__)
 
   enable :sessions

@@ -27,11 +27,12 @@ class RubysAdventure < Sinatra::Base
   end
 
   get '/levels/:id' do
-
-    send_file "public/level#{params[:id].to_i}.json"
+    send_file "#{level_path(params[:id])}.json"
   end
 
   post '/level/:id/execute' do
+    lvl = Level.new(level_path(params[:id]))
+    lvl.execute(params[:code] || "")
   end
 
   get '/test' do
@@ -47,15 +48,9 @@ class RubysAdventure < Sinatra::Base
   end
 
   private
-  def with_captured_stdout
-  begin
-    old_stdout = $stdout
-    $stdout = StringIO.new('','w')
-    yield
-    $stdout.string
-  ensure
-    $stdout = old_stdout
+
+  def level_path(id)
+    "public/level_#{id.to_i}"
   end
-end
 
 end

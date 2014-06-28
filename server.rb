@@ -36,9 +36,10 @@ class RubysAdventure < Sinatra::Base
     foo = StringIO.new
     priv = Privileges.new
     priv.allow_method :print
-
-    boo = with_captured_stdout {s.run(priv, 'print "hello world\n"')}
-    nil
+    priv.allow_method :gsub
+    value = nil
+    output = with_captured_stdout { value = s.run(priv, '"my_stuff".gsub("stuff","hi")')}
+    value
   end
 
   private

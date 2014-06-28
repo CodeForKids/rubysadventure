@@ -6,8 +6,10 @@ class RubysAdventure < Sinatra::Base
   register Sinatra::AssetPack
   register Sinatra::ActiveRecordExtension
 
+  set :root, File.dirname(__FILE__)
+
   enable :sessions
-  
+
   assets {
     serve '/css', from: 'public/css'
     css :app , ['/css/*.css']

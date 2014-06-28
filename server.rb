@@ -27,13 +27,12 @@ class RubysAdventure < Sinatra::Base
   end
 
   get '/levels/:id' do
-
-    send_file "public/level#{params[:id].to_i}.json"
+    send_file "#{level_path(params[:id])}.json"
   end
 
-  post '/levels/:id/execute' do
-    my_json = JSON.parse(request.body.read).to_hash
-    json check_answer(params[:id], my_json["code"])
+  post '/level/:id/execute' do
+    lvl = Level.new(level_path(params[:id]))
+    lvl.execute(params[:code] || "")
   end
 
   get '/test' do
@@ -61,9 +60,8 @@ class RubysAdventure < Sinatra::Base
     end
   end
 
-  def check_answer(id, answer)
-    json = JSON.parse(File.read("public/level#{id.to_i}answers.json"))
-    {success:json["answer1"] == answer, answer:json["answer1"], user_answer:answer, json:json}
+  def level_path(id)
+    "public/level_#{id.to_i}"
   end
 
 end

@@ -11,8 +11,8 @@ class RubysAdventure < Sinatra::Base
   enable :sessions
 
   assets {
-
-    css :app , ['/css/*.css']    js :app , ['js/*.js']
+    css :app , ['/css/*.css']
+    js :app , ['js/*.js']
   }
   set :public_folder, 'public'
 
@@ -20,11 +20,11 @@ class RubysAdventure < Sinatra::Base
     erb :index
   end
 
-  get '/chapter/:cid/question/:qid' do
+  get '/level/:id' do
     "Hello World!"
   end
 
-  post '/chapter/:cid/question/:qid' do
+  post '/level/:id' do
   end
 
 end

@@ -80,7 +80,6 @@ function create() {
 
   //bind inputs
   cursors = game.input.keyboard.createCursorKeys();
-  jumpButton = game.input.keyboard.addKey(Phaser.Keyboard.SPACEBAR);
 }
 
 /* x and y are percents of the width/height in decimal from the top left corner */
@@ -107,7 +106,12 @@ function update() {
       player.animations.play('right');
       facing = 'right';
     }
-  } else {
+  }
+  if (cursors.up.isDown && player.body.onFloor() && game.time.now > jumpTimer) {
+     player.body.velocity.y = -250;
+      jumpTimer = game.time.now + 750;
+  }
+  if (!(cursors.up.isDown || cursors.right.isDown || cursors.left.isDown)) {
     if (facing != 'idle') {
       player.animations.stop();
 
@@ -118,11 +122,6 @@ function update() {
       }
       facing = 'idle';
     }
-  }
-
-  if (jumpButton.isDown && player.body.onFloor() && game.time.now > jumpTimer) {
-      player.body.velocity.y = -250;
-      jumpTimer = game.time.now + 750;
   }
 }
 

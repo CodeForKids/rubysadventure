@@ -10,12 +10,12 @@ class Level
     @answers = json["answers"]
   end
 
-  def execute(code)
+  def execute(question_number, code)
     s = Shikashi::Sandbox.new
     print(code)
     value = nil
     output = with_captured_stdout { value = s.run(@privileges, code)}
-    check_answer(value || output)
+    check_answer(question_number, value || output)
   end
 
   private
@@ -30,8 +30,8 @@ class Level
     end
   end
 
-  def check_answer(answer)
-    {success:@answers[0] == answer, answer:@answers[0], user_answer:answer}
+  def check_answer(question_number, answer)
+    {success:@answers[question_number.to_i - 1] == answer, answer:@answers[question_number.to_i - 1], user_answer:answer.strip}
   end
 
   def allow_methods(priv, *methods)

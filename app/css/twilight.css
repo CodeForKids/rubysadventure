@@ -7,7 +7,7 @@
     background: #232323
 }
 .ace-twilight {
-    background-color: #141414;
+    background-color: rgba(20, 20, 20, 0.58);
     color: #F8F8F8
 }
 .ace-twilight .ace_cursor {

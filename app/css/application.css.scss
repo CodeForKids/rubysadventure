@@ -4,10 +4,12 @@
 }
 #logo {
   padding-left: 7px;
+  position: fixed;
 }
 
 html, body {
   background-color: #000100;
+  margin: 0px;
 }
 
 .editor {

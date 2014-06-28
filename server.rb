@@ -36,7 +36,7 @@ class RubysAdventure < Sinatra::Base
       session[:level][:question] = json["json"].to_i
       session[:level][:id] = params[:id]
     end
-    resp
+    resp.to_json
   end
 
   private

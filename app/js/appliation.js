@@ -3,7 +3,7 @@ $(document).ready(function(){
   // Editor For Information
   var editor = ace.edit("editor");
   editor.setTheme("ace/theme/twilight");
-  editor.getSession().setMode("ace/mode/ruby");
+  editor.getSession().setMode("ace/mode/text");
   editor.setReadOnly(true);
 
   window.editor = editor;
@@ -15,10 +15,6 @@ $(document).ready(function(){
   input_editor.renderer.setShowGutter(false);
   input_editor.focus();
 
-  // input_editor.on("blur",function(){
-  //   input_editor.focus();
-  // });
-
   window.input_editor = input_editor;
 
   input_editor.container.addEventListener("keydown", function(e){
@@ -28,7 +24,6 @@ $(document).ready(function(){
       postToServer(value)
     }
   }, true);
-
 
   editor.setValue("Type \"puts 'Hello World'\"");
 });
@@ -51,10 +46,13 @@ function parseResults(data) {
   json = JSON.parse(data);
 
   var message = "";
+  var user_answer = json.user_answer
   if (json.success) {
-    message = "That was right! :)\n";
+    message = "=> " + user_answer + "\n"
+    message = message + "That was right! :)";
   } else {
-    message = "That wasn't right :(\n"
+    message = "=> " + user_answer + "\n"
+    message = message + "That wasn't right :("
   }
-  window.editor.setValue(message);
+  window.editor.setValue(window.editor.getSession().getValue() + "\n" + message, 1);
 }

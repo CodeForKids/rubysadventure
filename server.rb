@@ -27,10 +27,6 @@ class RubysAdventure < Sinatra::Base
     erb :index
   end
 
-  get '/levels/:id' do
-    send_file "#{level_path(params[:id])}"
-  end
-
   post '/levels/:id/execute' do
     my_json = JSON.parse(request.body.read).to_hash
     lvl = Level.new(level_path(params[:id]))

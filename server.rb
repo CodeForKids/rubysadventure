@@ -40,8 +40,7 @@ class RubysAdventure < Sinatra::Base
     priv.allow_method :gsub
     value = nil
     output = with_captured_stdout { value = s.run(priv, code)}
-    puts output
-    value
+    value || output
   end
 
   private

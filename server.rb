@@ -32,14 +32,15 @@ class RubysAdventure < Sinatra::Base
   end
 
   get '/test' do
+    code = params[:code] || ""
     s = Sandbox.new
     foo = StringIO.new
     priv = Privileges.new
     priv.allow_method :print
     priv.allow_method :gsub
     value = nil
-    output = with_captured_stdout { value = s.run(priv, '"my_stuff".gsub("stuff","hi")')}
-    value
+    output = with_captured_stdout { value = s.run(priv, code)}
+    value || output
   end
 
   private

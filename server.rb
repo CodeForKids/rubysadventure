@@ -4,6 +4,7 @@ require 'sinatra/activerecord'
 require "rubygems"
 require "shikashi"
 require "sinatra/json"
+require './level.rb'
 
 include Shikashi
 
@@ -27,12 +28,13 @@ class RubysAdventure < Sinatra::Base
   end
 
   get '/levels/:id' do
-    send_file "#{level_path(params[:id])}.json"
+    send_file "#{level_path(params[:id])}"
   end
 
-  post '/level/:id/execute' do
+  post '/levels/:id/execute' do
+    my_json = JSON.parse(request.body.read).to_hash
     lvl = Level.new(level_path(params[:id]))
-    lvl.execute(params[:code] || "")
+    lvl.execute(my_json["code"] || "")
   end
 
   get '/test' do
@@ -61,7 +63,7 @@ class RubysAdventure < Sinatra::Base
   end
 
   def level_path(id)
-    "public/level_#{id.to_i}"
+    "public/level_#{id.to_i}.json"
   end
 
 end

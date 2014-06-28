@@ -1,9 +1,13 @@
 require 'sinatra'
-require 'active_record'
 require 'sinatra/assetpack'
 
-class RubysAdventure < Sinatra::Base
 
+class RubysAdventure < Sinatra::Base
+  register Sinatra::AssetPack
+  register Sinatra::ActiveRecordExtension
+
+  enable :sessions
+  
   assets {
     serve '/css', from: 'public/css'
     css :app , ['/css/*.css']
@@ -14,8 +18,11 @@ class RubysAdventure < Sinatra::Base
     "Welcome to Ruby's Adventure!"
   end
 
-  get '/hi' do
+  get '/level/:id' do
     "Hello World!"
+  end
+
+  post '/level/:id' do
   end
 
 end

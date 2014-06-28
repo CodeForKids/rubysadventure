@@ -51,10 +51,13 @@ function parseResults(data) {
   json = JSON.parse(data);
 
   var message = "";
+  var user_answer = json.user_answer
   if (json.success) {
-    message = "That was right! :)";
+    message = "=> " + user_answer + "\n"
+    message = message + "That was right! :)";
   } else {
-    message = "That wasn't right :("
+    message = "=> " + user_answer + "\n"
+    message = message + "That wasn't right :("
   }
   window.editor.setValue(window.editor.getSession().getValue() + "\n" + message, 1);
 }

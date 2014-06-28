@@ -18,7 +18,7 @@ class RubysAdventure < Sinatra::Base
   set :public_folder, 'public'
 
   get '/' do
-    "Welcome to Ruby's Adventure!"
+    erb :index
   end
 
   get '/level/:id' do

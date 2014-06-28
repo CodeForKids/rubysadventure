@@ -1,4 +1,5 @@
 require 'sinatra'
+require 'sass'
 require 'sinatra/assetpack'
 require 'sinatra/activerecord'
 require "rubygems"

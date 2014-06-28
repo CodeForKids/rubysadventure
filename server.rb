@@ -11,9 +11,8 @@ class RubysAdventure < Sinatra::Base
   enable :sessions
 
   assets {
-    serve '/css', from: 'public/css'
+
     css :app , ['/css/*.css']
-    serve '/js', from: 'public/js'
     js :app , ['js/*.js']
   }
   set :public_folder, 'public'

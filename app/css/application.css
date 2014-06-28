@@ -2,6 +2,9 @@
 #logo, #logo img {
   height: 2.5em;
 }
+#logo {
+  padding-left: 7px;
+}
 
 html, body {
   background-color: #000100;

@@ -41,6 +41,9 @@ $(document).ready(function(){
   }, true);
 
   editor.setValue("Type \"puts 'Hello World'\"");
+
+  var game = new Game();
+
 });
 
 function postToServer(code) {
@@ -70,17 +73,6 @@ function parseResults(data) {
     message = message + "That wasn't right :("
   }
   window.editor.setValue(window.editor.getSession().getValue() + "\n" + message, 1);
-}
-
-function nextDialogue(characterName, dialogueArray, deleteDialogue) {
-  var json = JSON.parse(dialogueArray)
-  for (dialogue in json) {
-    var index = json.indexOf(dialogueArray);
-    if (dialogue.character == characterName) {
-      if (deleteDialogue) {delete json[index]};
-      return dialogue
-    }
-  }
 }
 
 function pressKey(code) {

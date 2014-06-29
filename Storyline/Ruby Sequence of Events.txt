@@ -1,0 +1,209 @@
+
+Refer to RubyDialogue.txt for dialogue
+TQ means - Thought bubble, not speech bubble for all characters. 
+
+
+target: Ruby falls from the sky and lands on the ground.
+action: Speak, R1. 
+action: Unhide, arrow keys up, left, right. 
+action: Unhide, Van Ghost
+
+target: Collision (Van Ghost and Ruby). 
+action: Speak, G1
+action: Speak, R2
+
+If
+
+target: User input =! puts “hello”
+action: Speak, R2
+
+Else
+
+target: User input == puts “hello”
+action: Speak, R3
+action: Speak, G2
+action: Speak, R4
+
+If
+
+target: User input =! puts “My name is Ruby” 
+action: Speak, R4
+
+Else
+
+target: User input == puts “My name is Ruby” 
+action: Speak, R5
+action: Speak, G3
+
+If
+
+target: User input =! “Yes, please”
+action: Speak, R6
+
+Else
+
+target: User input == “Yes, please”
+action: Speak, R7
+action: Speak, G4
+
+target: Collision between Ruby and a ruby. 
+action: Hide, ruby
+action: Ruby count ++ 
+
+target: Ruby count == 5
+action: Unhide, Van Ghost 
+action: Speak, G5
+action: Speak, R8
+
+If
+
+Target: User input =! rubies = 3
+action: Speak, R8 
+
+Else
+
+target: User input == rubies = 3
+action: Speak, G6
+action: Speak, R9
+action: Set ruby count == 0
+action: Set ruby bank == 3
+action: Unhide, ruby (gem, not robot)
+
+If
+
+target: User input =! rubies += 1
+action: Speak, R9
+
+Else 
+
+target: User input == rubies += 1
+action: Speak, G7
+action: Speak, R10
+action: Hide, ruby
+action: Set ruby bank += 1
+
+If
+
+target: User input =! puts “Thank you”
+action: Speak, R12
+
+Else
+
+target: User input == puts “Thank you”
+action: Speak, R11
+
+target: Ruby count == 5
+action: Unhide, mechanic
+action: Unhide, closed toolbox
+action: Speak, M1
+action: Speak R13
+
+If
+
+target: User input =! puts “Hello”
+action: Speak, R15
+
+Else
+
+target: User input == puts “Hello”
+action: Speak, R14
+action: Hide, closed toolbox
+action: Unhide, open toolbox
+action: Unhide, words: [revidwercs, BOLTS, east, aLLEN KEY, MAEB RESAL, nail]
+action: Speak, M2
+action: Speak, R16
+
+If
+
+target: User input =! puts “I can help you” 
+action: Speak, R18
+
+Else
+
+target: User input == puts “I can help you” 
+action: Speak, R17
+action: Speak, R19
+
+If
+
+target: User input =! “revidwercs”.reverse
+action: Speak, R19
+
+Else 
+
+target: User input == “revidwercs”.reverse
+action: Speak, M3
+action: Hide, revidwercs
+action: Unhide, screwdriver
+action: Speak, R20
+
+If
+
+target: User input =! “BOLTS”.downcase
+action: Speak, R20
+
+Else
+
+target: User input == “BOLTS”.downcase
+action: Speak, M4
+action: Hide, BOLTS
+action: Unhide, bolts
+action: Speak, R21
+
+If
+
+target: User input =! “sast”.upcase
+action: Speak, R21
+
+Else
+
+target: User input == “sast”.upcase
+action: Speak, M5
+action: Hide, sast
+action: Unhide, SAST
+action: Speak, R22
+
+If
+
+target: User input =! “aLLEN KEY”.swapcase 
+action: Speak, R22
+
+Else 
+
+target: User input == “aLLEN KEY”.swapcase 
+action: Speak, M5
+action: Hide, aLLEN KEY
+action: Unhide, Allen key
+action: Speak, R23
+
+If
+
+target: User input =! “MAEB RESAL”.downcase.reverse
+action: Speak, R23
+
+Else 
+
+target: User input == “MAEB RESAL”.downcase.reverse
+action: Speak, R6
+action: Hide, MAEB RESAL
+action: Unhide, lazer beam
+action: Speak, M7
+action: Speak, R24
+
+If
+
+target: User input =! “nail” * 5
+action: Speak, R24
+
+Else
+
+target: User input == “nail” * 5
+action: Hide, nail
+action: Unhide, nail, nail, nail, nail, nail
+action: Speak, M8
+
+
+
+
+
+

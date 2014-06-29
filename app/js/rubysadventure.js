@@ -221,6 +221,19 @@ var Game = function(channel) {
       //show
   }
 
+  function eventSpeak(params) {
+    var allDialogues
+    for (index in allDialogues) {
+      if (allDialogues[index].character == params[0]) {
+        speak(allDialogues[index])
+      };
+    }
+  }
+
+  function speak(dialogue) {
+    //speak
+  }
+
   function nextDialogue(characterName, dialogueArray, deleteDialogue) {
     var json = JSON.parse(dialogueArray)
     for (index in json) {

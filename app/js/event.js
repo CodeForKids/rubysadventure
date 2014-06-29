@@ -5,7 +5,7 @@ var EventChannel = function(){
         if(e["target"] == name){
           var found = true;
           for(i = 0; i < params.length; i++) {
-            if params[i] != e["params"][i]{
+            if(params[i] != e["params"][i]){
               found = false;
               break;
             }

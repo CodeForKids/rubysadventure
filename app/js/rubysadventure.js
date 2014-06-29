@@ -1,20 +1,30 @@
-var Game = function() {
+var Game = function(channel) {
 
+    /* Variables */
     var window_width = $(window).width();
     var window_height = $(window).height();
-
+    var map;
+    var tileset;
+    var layer;
+    var player;
+    var facing = 'right';
+    var jumpTimer = 0;
+    var cursors;
+    var jumpButton;
+    var bg;
+    var ground;
+    var eventChannel = channel;
+    var game = new Phaser.Game(window_width, window_height, Phaser.AUTO, '', {
+        preload: preload,
+        create: create,
+        update: update
+    });
     if (window_width < 1024) {
         window_width = 1024;
     }
     if (window_height < 720) {
         window_height = 720;
     }
-
-    var game = new Phaser.Game(window_width, window_height, Phaser.AUTO, '', {
-        preload: preload,
-        create: create,
-        update: update
-    });
 
     function preload() {
         //load image and json files
@@ -30,17 +40,6 @@ var Game = function() {
         game.load.image('ground', 'images/bar.png');
     }
 
-    /* Variables */
-    var map;
-    var tileset;
-    var layer;
-    var player;
-    var facing = 'right';
-    var jumpTimer = 0;
-    var cursors;
-    var jumpButton;
-    var bg;
-    var ground;
 
     function create() {
         setupBackgroundAndWorld();

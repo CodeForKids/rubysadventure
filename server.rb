@@ -27,7 +27,7 @@ class RubysAdventure < Sinatra::Base
   end
 
   get '/levels/:id' do
-    lvl_json = File.read(level_path(id)).to_json
+    json = File.read(level_path(id)).to_json
   end
 
   post '/levels/:id/execute' do

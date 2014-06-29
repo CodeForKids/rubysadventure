@@ -194,3 +194,20 @@ function playerCanJump() {
 
   return ((p + 0.5) > h && h > (p - 0.5));
 }
+
+function eventShow(params)
+{
+
+}
+
+function nextDialogue(characterName, dialogueArray, deleteDialogue) {
+  var json = JSON.parse(dialogueArray)
+  for (dialogue in json) {
+    var index = json.indexOf(dialogueArray);
+    if (dialogue.character == characterName) {
+      if (deleteDialogue) {delete json[index]};
+      return dialogue
+    }
+  }
+}
+

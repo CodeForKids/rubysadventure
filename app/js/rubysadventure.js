@@ -16,7 +16,7 @@ function preload() {
   game.load.spritesheet('robot', 'images/robot.png', 130, 302, 7);
   game.load.image('birds', 'images/birds.png');
   game.load.image('cloud1', 'images/cloud-1.png');
-  game.load.image('cloud2', 'images/cloud-2.png', 32, 48);
+  game.load.image('cloud2', 'images/cloud-2.png');
   game.load.image('spaceship', 'images/spaceship.png');
   game.load.image('sun', 'images/sun.png');
   game.load.image('ground', 'images/bar.png');
@@ -27,7 +27,7 @@ var map;
 var tileset;
 var layer;
 var player;
-var facing = 'left';
+var facing = 'right';
 var jumpTimer = 0;
 var cursors;
 var jumpButton;
@@ -45,7 +45,7 @@ function create() {
   bg = game.add.tileSprite(0, 0, window_width, window_height, 'background');
   bg.fixedToCamera = true;
 
-  addSprite(game, 'spaceship', 0.32, 0.6);
+  addSprite(game, 'spaceship', 0.32, 0.58);
   addSprite(game, 'sun', 0.5, 0.65);
   addSprite(game, 'cloud1', -0.05, 0.1);
   addSprite(game, 'cloud2', 0.6, 0.5);
@@ -66,7 +66,7 @@ function create() {
 
   // This stops it from falling away when you jump on it
   ground.body.immovable = true;
-  player = game.add.sprite(32, 32, 'robot');
+  player = game.add.sprite(0.6, 600, 'robot');
   game.physics.enable(player, Phaser.Physics.ARCADE);
 
   player.body.gravity.set(0, 360);
@@ -92,13 +92,12 @@ function create() {
 }
 
 /* x and y are percents of the width/height in decimal from the top left corner */
-
 function addSprite(game, sprite, x, y) {
     game.add.sprite(window_width * x, window_height * y, sprite);
 }
 
 function update() {
-  //game.physics.arcade.collide(player, ground);
+  game.physics.arcade.collide(player, ground);
   player.body.velocity.x = 0;
 
   if (cursors.left.isDown) {
@@ -118,7 +117,7 @@ function update() {
   }
   if (cursors.up.isDown && player.body.onFloor() && game.time.now > jumpTimer) {
      player.body.velocity.y = -250;
-      jumpTimer = game.time.now + 750;
+     jumpTimer = game.time.now + 750;
   }
   if (!(cursors.up.isDown || cursors.right.isDown || cursors.left.isDown)) {
     if (facing != 'idle') {
@@ -132,10 +131,6 @@ function update() {
       facing = 'idle';
     }
   }
+
 }
 
-function render() {
-  game.debug.text(game.time.physicsElapsed, 32, 32);
-  game.debug.body(player);
-  game.debug.bodyInfo(player, 16, 24);
-}

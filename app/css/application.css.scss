@@ -24,14 +24,15 @@ html, body {
 
 #editor {
   @extend .editor;
-  bottom: 15%;
+  bottom: 64px;
   top: 0em;
 }
 
 #input_editor {
   @extend .editor;
   bottom: 0;
-  top: 85%;
+  height: 64px;
+  width: 100%;
 }
 
 #input_editor .ace_content {

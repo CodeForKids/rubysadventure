@@ -43,6 +43,10 @@ class RubysAdventure < Sinatra::Base
     resp.to_json
   end
 
+  def getLevelJSON(id)
+    json = File.read(level_path(id)).to_json
+  end
+
   private
   def level_path(id)
     "public/levels/#{id.to_i}.json"

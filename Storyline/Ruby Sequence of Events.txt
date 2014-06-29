@@ -1,8 +1,3 @@
-
-Refer to rubyDialogue.txt for dialogue
-TQ means - Thought bubble, not speech bubble for all characters. 
-
-
 target: start
 action: speak, R1 
 action: show, arrow keys up, left, right
@@ -36,7 +31,7 @@ action: speak, G4
 
 target: collision, ruby, gem
 action: hide, ruby
-action: ruby count ++ 
+action: set-inventory, rubies, 1
 
 target: answer-right
 action: show, Van Ghost 
@@ -49,7 +44,7 @@ action: speak, R8
 target: answer-right
 action: speak, G6
 action: speak, R9
-action: set-inventory, rubies, 3
+action: set-inventory, rubies, 4
 action: show, gem
 
 target: answer-wrong
@@ -59,7 +54,7 @@ target: answer-right
 action: speak, G7
 action: speak, R10
 action: hide, ruby
-action: set-inventory, rubies, 4
+action: set-inventory, rubies, 5
 
 target: answer-wrong
 action: speak, R12
@@ -80,7 +75,7 @@ target: answer-right
 action: speak, R14
 action: hide, toolbox-closed
 action: show, toolbox-open
-action: show, revidwercs, BOLTS, east, aLLEN KEY, MAEB RESAL, nail
+action: show, revidwercs, BOLTS, east, aLLEN-KEY, MAEB-RESAL, nail
 action: speak, M2
 action: speak, R16
 
@@ -123,8 +118,8 @@ action: speak, R22
 
 target: answer-right
 action: speak, M5
-action: hide, aLLEN KEY
-action: show, Allen key
+action: hide, aLLEN-KEY
+action: show, Allen-key
 action: speak, R23
 
 target: answer-wrong

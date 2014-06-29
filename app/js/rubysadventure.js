@@ -5,19 +5,25 @@ var Game = function(channel) {
   var map;
   var tileset;
   var layer;
-  var player;
+
   var facing = 'right';
   var jumpTimer = 0;
+
+  this.player;
   this.cursors;
+  this.crazyGhost;
+
   var jumpButton;
   var bg;
   var ground;
   var eventChannel = channel;
-  var game = new Phaser.Game(window_width, window_height, Phaser.AUTO, '', {
+  this.game = new Phaser.Game(window_width, window_height, Phaser.AUTO, '', {
       preload: preload,
       create: create,
       update: update
   });
+  var game = this.game;
+
   if (window_width < 1024) {
       window_width = 1024;
   }
@@ -38,6 +44,7 @@ var Game = function(channel) {
     game.load.image('sun', 'images/sun.png');
     game.load.image('ground', 'images/bar.png');
     game.load.image('moneybag', 'images/moneybag.png');
+    game.load.image('crazy-ghost', 'images/crazy-ghost.png');
   }
 
   function create() {
@@ -82,6 +89,10 @@ var Game = function(channel) {
     }
 
     game.add.sprite(window_width * 0.8, game.world.height - 380, 'spaceship');
+
+    crazyGhost = game.add.sprite(window_width * 0.4, game.world.height - 400, 'crazy-ghost');
+    game.physics.enable(crazyGhost, Phaser.Physics.ARCADE);
+    crazyGhost.body.immovable = true;
   }
 
   function setupGround() {
@@ -102,7 +113,6 @@ var Game = function(channel) {
 
     player.body.gravity.set(0, 360);
     player.body.bounce.y = 0.2;
-    player.body.collideWorldBounds = true;
     player.body.setSize(130, 302);
     player.body.collideWorldBounds = true;
 
@@ -123,9 +133,9 @@ var Game = function(channel) {
 
     for (var i = 0; i < 5; i++) {
         if (i < 3) {
-            var gem = gems.create((window_width * 0.68) - 560 + (90 * i), 50, 'gem-active');
+            var gem = gems.create((90 * i) + 250, 100, 'gem-active');
         } else {
-            var gem = gems.create((window_width * 0.68) - 560 + (90 * i), 50, 'gem-inactive');
+            var gem = gems.create((90 * i) + 250, 100, 'gem-inactive');
         }
         gem.anchor.setTo(0.5, 0.5);
     }
@@ -136,7 +146,7 @@ var Game = function(channel) {
   function setupMoneyBag() {
     chest = game.add.group();
 
-    var bag = gems.create((window_width * 0.68) - 60, 50, 'moneybag');
+    var bag = gems.create(100, 100, 'moneybag');
     bag.anchor.setTo(0.5, 0.5);
 
     chest.fixedToCamera = true;
@@ -150,8 +160,15 @@ var Game = function(channel) {
 
   function update() {
     game.physics.arcade.collide(player, ground);
-    player.body.velocity.x = 0;
+    game.physics.arcade.collide(player, crazyGhost, function() {
+      eventChannel.trigger('collision', [], ['Van Ghost','ruby']);
+    }, null, this);
 
+    player.body.velocity.x = 0;
+    setupKeys();
+  }
+
+  function setupKeys() {
     if (cursors.left.isDown) {
         player.body.velocity.x = -300;
 
@@ -230,8 +247,10 @@ var Game = function(channel) {
     }
   }
 
-  function speak(dialogue) {
-    //speak
+  this.setupCollision = function() {
+    game.physics.arcade.collide(player, crazyGhost, function() {
+      console.log("COLLIDE");
+    }, null, this);
   }
 
   function nextDialogue(characterName, dialogueArray, deleteDialogue) {

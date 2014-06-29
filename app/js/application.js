@@ -1,8 +1,40 @@
-$(document).ready(function(){
+var dialogue;
 
+$(document).ready(function(){
+  channel = setupChannel();
+
+  // Editor For Information
+  var editor = setupEditor();
+
+  // Command Input
+  var input_editor = setupInputEditor();
+  overrideEditorArrows(input_editor);
+
+  window.game = new Game(channel);
+});
+
+function postToServer(code) {
+  $.ajax({
+    type: "POST",
+    url: '/levels/1/execute',
+    data:  JSON.stringify({ "code" : code, "question": 1 }),
+    contentType: 'application/json'
+  }).done(function(data) {
+    parseResults(data);
+    window.input_editor.gotoLine(0);
+  });
+}
+
+function setupChannel() {
   channel = new EventChannel();
+
+  $.get('/dialogue1.json', function(data) {
+    dialogue = data;
+  });
+
   var json = $.get('/events.json', function(data) {
     channel.events = data;
+    channel.trigger('start',[],[]);
   });
 
   channel.answerRight = function(user_answer) {
@@ -15,15 +47,29 @@ $(document).ready(function(){
     message = message + "That wasn't right :("
     window.editor.setValue(window.editor.getSession().getValue() + "\n" + message, 1);
   }
-  // Editor For Information
+  channel.speak = function(params) {
+    if(params[0].length == 2) {
+      var d = dialogue.shift();
+      speak(d);
+    } else {
+      speak(params[0]);
+    }
+  }
+
+  return channel;
+}
+
+function setupEditor() {
   var editor = ace.edit("editor");
   editor.setTheme("ace/theme/twilight");
   editor.getSession().setMode("ace/mode/text");
   editor.setReadOnly(true);
 
   window.editor = editor;
+  return editor;
+}
 
-  // Command Input
+function setupInputEditor() {
   var input_editor = ace.edit("input_editor");
   input_editor.setTheme("ace/theme/twilight");
   input_editor.getSession().setMode("ace/mode/ruby");
@@ -35,7 +81,10 @@ $(document).ready(function(){
   });
 
   window.input_editor = input_editor;
+  return input_editor;
+}
 
+function overrideEditorArrows(input_editor) {
   input_editor.container.addEventListener("keydown", function(e){
     if (e.keyCode == 13) {
       var value = input_editor.getSession().getValue();
@@ -54,25 +103,6 @@ $(document).ready(function(){
       }
     }
   }, true);
-
-  editor.setValue("Type \"puts 'Hello World'\"");
-
-  var game = new Game(channel);
-
-});
-
-function postToServer(code) {
-
-  $.ajax({
-    type: "POST",
-    url: '/levels/1/execute',
-    data:  JSON.stringify({ "code" : code, "question": 1 }),
-    contentType: 'application/json'
-  }).done(function(data) {
-    parseResults(data);
-    window.input_editor.gotoLine(0);
-  });
-
 }
 
 function parseResults(data) {
@@ -115,4 +145,31 @@ function pressKey(code) {
   );
   keyboardEvent.keyCodeVal = code;
   return keyboardEvent;
+}
+
+function speak(dialogue) {
+  if (typeof dialogue["character"] != "undefined") {
+    var message = dialogue["character"];
+    if(dialogue["type"] == "thought") {
+      message += " thinks ";
+    } else {
+      message += " says ";
+    }
+    message += dialogue["dialogue"];
+    window.editor.setValue(editorValue() + message, 1);
+  } else {
+    window.editor.setValue(editorValue() + dialogue, 1);
+  }
+}
+
+function editorValue() {
+  var val = window.editor.getSession().getValue();
+  if(val != "") {
+    val = val + "\n";
+  }
+  return val;
+}
+
+function collision(game) {
+  // game.setupCollision();
 }

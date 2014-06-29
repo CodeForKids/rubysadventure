@@ -1,18 +1,4 @@
 [{
-    "trigger": "answerWrong",
-    "params": [],
-    "actions": [{
-        "trigger": "answerWrong",
-        "params": []
-    }]
-},{
-    "trigger": "answerRight",
-    "params": [],
-    "actions": [{
-        "trigger": "answerRight",
-        "params": []
-    }]
-},{
     "trigger": "start",
     "params": [],
     "actions": [{
@@ -40,7 +26,7 @@
     "params": [],
     "actions": [{
         "trigger": "speak",
-        "params": ["R2"]
+        "params": ["Van Ghost thinks 'That wasn't quite right...'\n"]
     }]
 }, {
     "trigger": "answerRight",

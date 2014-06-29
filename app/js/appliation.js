@@ -57,12 +57,12 @@ function parseResults(data) {
   window.editor.setValue(window.editor.getSession().getValue() + "\n" + message, 1);
 }
 
-function nextDialogue(characterName, dialogueArray) {
+function nextDialogue(characterName, dialogueArray, deleteDialogue) {
   var json = JSON.parse(dialogueArray)
   for (dialogue in json) {
     var index = json.indexOf(dialogueArray);
     if (dialogue.character == characterName) {
-      delete json[index]
+      if (deleteDialogue) {delete json[index]};
       return dialogue
     }
   }

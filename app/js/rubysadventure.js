@@ -18,6 +18,8 @@ function preload() {
   game.load.image('cloud1', 'images/cloud-1.png');
   game.load.image('cloud2', 'images/cloud-2.png');
   game.load.image('spaceship', 'images/spaceship.png');
+  game.load.image('gem-inactive', 'images/gem-inactive.png');
+  game.load.image('gem-active', 'images/gem-active.png');
   game.load.image('sun', 'images/sun.png');
   game.load.image('ground', 'images/bar.png');
 }
@@ -89,6 +91,22 @@ function create() {
   //Camera stuff
    player.anchor.setTo(0, 0.7);
    game.camera.follow(player, Phaser.Camera.FOLLOW_LOCKON);
+
+  // 
+  gems = game.add.group();
+
+  for (var i = 0; i < 5; i++) 
+  {
+    if (i < 3){
+      var gem = gems.create((window_width * 0.68) - 400 + (90 * i), 50, 'gem-active');
+    } else {
+      var gem = gems.create((window_width * 0.68) - 400 + (90 * i), 50, 'gem-inactive');
+    }
+    gem.anchor.setTo(0.5, 0.5);
+  }
+
+  gems.fixedToCamera = true;
+
 }
 
 /* x and y are percents of the width/height in decimal from the top left corner */

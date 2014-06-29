@@ -5,7 +5,8 @@ TQ means - Thought bubble, not speech bubble for all characters.
 
 target: Ruby falls from the sky and lands on the ground.
 action: Speak, R1. 
-action: Appear, arrow keys up, left, right. 
+action: Unhide, arrow keys up, left, right. 
+action: Unhide, Van Ghost
 
 target: Collision (Van Ghost and Ruby). 
 action: Speak, G1
@@ -18,7 +19,7 @@ action: Speak, R2
 
 Else
 
-target:/Users/Test2/Desktop/Code for Kids/rubysadventure/Storyline/Events.txt User input == puts “hello”
+target: User input == puts “hello”
 action: Speak, R3
 action: Speak, G2
 action: Speak, R4

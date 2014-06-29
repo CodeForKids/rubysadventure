@@ -14,8 +14,12 @@ class Level
     s = Shikashi::Sandbox.new
     print(code)
     value = nil
+    begin
     output = with_captured_stdout { value = s.run(@privileges, code)}
-    check_answer(question_number, value || output)
+    rescue SecurityError => e
+      # invalid code
+    end
+    check_answer(question_number, value || output || "")
   end
 
   private

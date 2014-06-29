@@ -1,5 +1,6 @@
 $(document).ready(function(){
 
+  channel = new EventChannel();
   // Editor For Information
   var editor = ace.edit("editor");
   editor.setTheme("ace/theme/twilight");
@@ -42,7 +43,7 @@ $(document).ready(function(){
 
   editor.setValue("Type \"puts 'Hello World'\"");
 
-  var game = new Game();
+  var game = new Game(channel);
 
 });
 

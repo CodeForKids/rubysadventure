@@ -26,12 +26,15 @@ class RubysAdventure < Sinatra::Base
     erb :index
   end
 
+  get '/levels/:id' do
+    @lvl = Level.new(level_path(params[:id]))
+  end
+
   post '/levels/:id/execute' do
     json = JSON.parse(request.body.read).to_hash
-    lvl = Level.new(level_path(params[:id]))
     code = json["code"] || ""
     question = json["question"].to_i || 1
-    resp = lvl.execute(question, code)
+    resp = @lvl.execute(question, code)
     if resp[:success]
       session[:level] ||= {}
       session[:level][:question] = json["json"].to_i

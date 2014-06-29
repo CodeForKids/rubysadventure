@@ -197,7 +197,18 @@ function playerCanJump() {
 
 function eventShow(params)
 {
+  var allObjects
+  var objsToShow = []
+  for (object in params) {
+    if (allObjects.indexOf(object) != -1) {objsToShow.push(object)};
+  }
+  for (object in objsToShow) {
+    show(object)
+  }
+}
 
+function show(object){
+  //show
 }
 
 function nextDialogue(characterName, dialogueArray, deleteDialogue) {

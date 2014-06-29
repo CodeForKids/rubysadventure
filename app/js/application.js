@@ -43,7 +43,7 @@ $(document).ready(function(){
       e.stopImmediatePropagation();
 
       if (e.keyCode == 37) {
-      cursors.left.processKeyDown(pressKey(37));
+        cursors.left.processKeyDown(pressKey(37));
       } else if (e.keyCode == 38) {
         cursors.up.processKeyDown(pressKey(38));
       } else if (e.keyCode == 39) {

@@ -8,7 +8,7 @@ var Game = function(channel) {
   var player;
   var facing = 'right';
   var jumpTimer = 0;
-  var cursors;
+  this.cursors;
   var jumpButton;
   var bg;
   var ground;

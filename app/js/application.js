@@ -15,6 +15,10 @@ $(document).ready(function(){
   input_editor.renderer.setShowGutter(false);
   input_editor.focus();
 
+  input_editor.on("blur",function(){
+    input_editor.focus();
+  });
+
   window.input_editor = input_editor;
 
   input_editor.container.addEventListener("keydown", function(e){
@@ -22,6 +26,17 @@ $(document).ready(function(){
       var value = input_editor.getSession().getValue();
       input_editor.setValue("");
       postToServer(value)
+    } else if (e.keyCode > 36 && e.keyCode < 40) {
+      e.preventDefault();
+      e.stopImmediatePropagation();
+
+      if (e.keyCode == 37) {
+      cursors.left.processKeyDown(pressKey(37));
+      } else if (e.keyCode == 38) {
+        cursors.up.processKeyDown(pressKey(38));
+      } else if (e.keyCode == 39) {
+        cursors.right.processKeyDown(pressKey(39));
+      }
     }
   }, true);
 
@@ -66,4 +81,36 @@ function nextDialogue(characterName, dialogueArray, deleteDialogue) {
       return dialogue
     }
   }
+}
+
+function pressKey(code) {
+  var keyboardEvent = document.createEvent("KeyboardEvent");
+  Object.defineProperty(keyboardEvent, 'keyCode', {
+    get : function() {
+      return this.keyCodeVal;
+    }
+  });
+
+  Object.defineProperty(keyboardEvent, 'which', {
+    get : function() {
+      return this.keyCodeVal;
+    }
+  });
+
+  var initMethod = typeof keyboardEvent.initKeyboardEvent !== 'undefined' ? "initKeyboardEvent" : "initKeyEvent";
+
+  keyboardEvent[initMethod](
+     "keydown", // event type : keydown, keyup, keypress
+     true, // bubbles
+     true, // cancelable
+     window, // viewArg: should be window
+     false, // ctrlKeyArg
+     false, // altKeyArg
+     false, // shiftKeyArg
+     false, // metaKeyArg
+     code, // keyCodeArg : unsigned long the virtual key code, else 0
+     0 // charCodeArgs : unsigned long the Unicode character associated with the depressed key, else 0
+  );
+  keyboardEvent.keyCodeVal = code;
+  return keyboardEvent;
 }

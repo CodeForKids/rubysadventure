@@ -74,8 +74,8 @@ function setupSprites() {
   addSprite(game, 'sun', 0.5, 0.65);
 
   for (var i = 0; i < 3; i++) {
-    addSprite(game, 'cloud1', -0.05 + i, randomHeightPercent(0.0, 0.3));
-    addSprite(game, 'cloud2', 0.6 + i, randomHeightPercent(0.5, 0.7));
+    addSprite(game, 'cloud1', -0.05 + i, randomHeightPercent(0.0, 0.4));
+    addSprite(game, 'cloud2', 0.6 + i, randomHeightPercent(0.5, 0.6));
     addSprite(game, 'birds', 0.48 + i, Math.random());
   }
 
@@ -172,7 +172,6 @@ function update() {
       facing = 'idle';
     }
   }
-
 }
 
 function randomHeightPercent(lower, higher) {

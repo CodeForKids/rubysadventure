@@ -45,8 +45,8 @@ function create() {
   bg = game.add.tileSprite(0, 0, window_width, window_height, 'background');
   bg.fixedToCamera = true;
 
-  addSprite(game, 'spaceship', 0.32, 0.58);
   addSprite(game, 'sun', 0.5, 0.65);
+  game.add.sprite(window_width * 0.8, game.world.height - 380, 'spaceship');
 
   for (var i = 0; i < 3; i++) {
     addSprite(game, 'cloud1', -0.05 + i, randomHeightPercent(0.0, 0.3));

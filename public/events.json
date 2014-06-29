@@ -1,1 +1,371 @@
-[{"trigger":"start","params":[],"actions":[{"trigger":"speak","params":["R1"]},{"trigger":"show","params":["arrow keys up","left","right"]},{"trigger":"show","params":["Van Ghost"]}]},{"trigger":"collision","params":["Van Ghost","ruby"],"actions":[{"trigger":"speak","params":["G1"]},{"trigger":"speak","params":["R2"]}]},{"trigger":"answer-wrong","params":[],"actions":[{"trigger":"speak","params":["R2"]}]},{"trigger":"answer-right","params":[],"actions":[{"trigger":"speak","params":["R3"]},{"trigger":"speak","params":["G2"]},{"trigger":"speak","params":["R4"]}]},{"trigger":"answer-wrong","params":[],"actions":[{"trigger":"speak","params":["R4"]}]},{"trigger":"answer-right","params":[],"actions":[{"trigger":"speak","params":["R5"]},{"trigger":"speak","params":["G3"]}]},{"trigger":"answer-wrong","params":[],"actions":[{"trigger":"speak","params":["R6"]}]},{"trigger":"answer-right","params":[],"actions":[{"trigger":"speak","params":["R7"]},{"trigger":"speak","params":["G4"]}]},{"trigger":"collision","params":["ruby","gem"],"actions":[{"trigger":"hide","params":["ruby"]},{"trigger":"set-inventory","params":["rubies","1"]}]},{"trigger":"answer-right","params":[],"actions":[{"trigger":"show","params":["Van Ghost"]},{"trigger":"speak","params":["G5"]},{"trigger":"speak","params":["R8"]},{"trigger":"speak","params":["R8"]}]},{"trigger":"answer-right","params":[],"actions":[{"trigger":"speak","params":["G6"]},{"trigger":"speak","params":["R9"]},{"trigger":"set-inventory","params":["rubies","4"]},{"trigger":"show","params":["gem"]}]},{"trigger":"answer-wrong","params":[],"actions":[{"trigger":"speak","params":["R9"]}]},{"trigger":"answer-right","params":[],"actions":[{"trigger":"speak","params":["G7"]},{"trigger":"speak","params":["R10"]},{"trigger":"hide","params":["ruby"]},{"trigger":"set-inventory","params":["rubies","5"]}]},{"trigger":"answer-wrong","params":[],"actions":[{"trigger":"speak","params":["R12"]}]},{"trigger":"answer-right","params":[],"actions":[{"trigger":"speak","params":["R11"]}]},{"trigger":"answer-right","params":[],"actions":[{"trigger":"show","params":["mechanic"]},{"trigger":"show","params":["toolbox-closed"]},{"trigger":"speak","params":["M1"]},{"trigger":"speak R13","params":[]}]},{"trigger":"answer-wrong","params":[],"actions":[{"trigger":"speak","params":["R15"]}]},{"trigger":"answer-right","params":[],"actions":[{"trigger":"speak","params":["R14"]},{"trigger":"hide","params":["toolbox-closed"]},{"trigger":"show","params":["toolbox-open"]},{"trigger":"show","params":["revidwercs","BOLTS","east","aLLEN-KEY","MAEB-RESAL","nail"]},{"trigger":"speak","params":["M2"]},{"trigger":"speak","params":["R16"]}]},{"trigger":"answer-wrong","params":[],"actions":[{"trigger":"speak","params":["R18"]}]},{"trigger":"answer-right","params":[],"actions":[{"trigger":"speak","params":["R17"]},{"trigger":"speak","params":["R19"]}]},{"trigger":"answer-wrong","params":[],"actions":[{"trigger":"speak","params":["R19"]}]},{"trigger":"answer-right","params":[],"actions":[{"trigger":"speak","params":["M3"]},{"trigger":"hide","params":["revidwercs"]},{"trigger":"show","params":["screwdriver"]},{"trigger":"speak","params":["R20"]}]},{"trigger":"answer-wrong","params":[],"actions":[{"trigger":"speak","params":["R20"]}]},{"trigger":"answer-right","params":[],"actions":[{"trigger":"speak","params":["M4"]},{"trigger":"hide","params":["BOLTS"]},{"trigger":"show","params":["bolts"]},{"trigger":"speak","params":["R21"]}]},{"trigger":"answer-wrong","params":[],"actions":[{"trigger":"speak","params":["R21"]}]},{"trigger":"answer-right","params":[],"actions":[{"trigger":"speak","params":["M5"]},{"trigger":"hide","params":["sast"]},{"trigger":"show","params":["SAST"]},{"trigger":"speak","params":["R22"]}]},{"trigger":"answer-wrong","params":[],"actions":[{"trigger":"speak","params":["R22"]}]},{"trigger":"answer-right","params":[],"actions":[{"trigger":"speak","params":["M5"]},{"trigger":"hide","params":["aLLEN-KEY"]},{"trigger":"show","params":["Allen-key"]},{"trigger":"speak","params":["R23"]}]},{"trigger":"answer-wrong","params":[],"actions":[{"trigger":"speak","params":["R23"]}]},{"trigger":"answer-right","params":[],"actions":[{"trigger":"speak","params":["R6"]},{"trigger":"hide","params":["MAEB RESAL"]},{"trigger":"show","params":["lazer beam"]},{"trigger":"speak","params":["M7"]},{"trigger":"speak","params":["R24"]}]},{"trigger":"answer-wrong","params":[],"actions":[{"trigger":"speak","params":["R24"]}]},{"trigger":"answer-right","params":[],"actions":[{"trigger":"hide","params":["nail"]},{"trigger":"show","params":["nail","nail","nail","nail","nail"]},{"trigger":"speak","params":["M8"]}]}]
+[{
+    "trigger": "answerWrong",
+    "params": [],
+    "actions": [{
+        "trigger": "answerWrong",
+        "params": []
+    }]
+},{
+    "trigger": "answerRight",
+    "params": [],
+    "actions": [{
+        "trigger": "answerRight",
+        "params": []
+    }]
+},{
+    "trigger": "start",
+    "params": [],
+    "actions": [{
+        "trigger": "speak",
+        "params": ["R1"]
+    }, {
+        "trigger": "show",
+        "params": ["arrow keys up", "left", "right"]
+    }, {
+        "trigger": "show",
+        "params": ["Van Ghost"]
+    }]
+}, {
+    "trigger": "collision",
+    "params": ["Van Ghost", "ruby"],
+    "actions": [{
+        "trigger": "speak",
+        "params": ["G1"]
+    }, {
+        "trigger": "speak",
+        "params": ["R2"]
+    }]
+}, {
+    "trigger": "answerWrong",
+    "params": [],
+    "actions": [{
+        "trigger": "speak",
+        "params": ["R2"]
+    }]
+}, {
+    "trigger": "answerRight",
+    "params": [],
+    "actions": [{
+        "trigger": "speak",
+        "params": ["R3"]
+    }, {
+        "trigger": "speak",
+        "params": ["G2"]
+    }, {
+        "trigger": "speak",
+        "params": ["R4"]
+    }]
+}, {
+    "trigger": "answerWrong",
+    "params": [],
+    "actions": [{
+        "trigger": "speak",
+        "params": ["R4"]
+    }]
+}, {
+    "trigger": "answerRight",
+    "params": [],
+    "actions": [{
+        "trigger": "speak",
+        "params": ["R5"]
+    }, {
+        "trigger": "speak",
+        "params": ["G3"]
+    }]
+}, {
+    "trigger": "answerWrong",
+    "params": [],
+    "actions": [{
+        "trigger": "speak",
+        "params": ["R6"]
+    }]
+}, {
+    "trigger": "answerRight",
+    "params": [],
+    "actions": [{
+        "trigger": "speak",
+        "params": ["R7"]
+    }, {
+        "trigger": "speak",
+        "params": ["G4"]
+    }]
+}, {
+    "trigger": "collision",
+    "params": ["ruby", "gem"],
+    "actions": [{
+        "trigger": "hide",
+        "params": ["ruby"]
+    }, {
+        "trigger": "set-inventory",
+        "params": ["rubies", "1"]
+    }]
+}, {
+    "trigger": "answerRight",
+    "params": [],
+    "actions": [{
+        "trigger": "show",
+        "params": ["Van Ghost"]
+    }, {
+        "trigger": "speak",
+        "params": ["G5"]
+    }, {
+        "trigger": "speak",
+        "params": ["R8"]
+    }, {
+        "trigger": "speak",
+        "params": ["R8"]
+    }]
+}, {
+    "trigger": "answerRight",
+    "params": [],
+    "actions": [{
+        "trigger": "speak",
+        "params": ["G6"]
+    }, {
+        "trigger": "speak",
+        "params": ["R9"]
+    }, {
+        "trigger": "set-inventory",
+        "params": ["rubies", "4"]
+    }, {
+        "trigger": "show",
+        "params": ["gem"]
+    }]
+}, {
+    "trigger": "answerWrong",
+    "params": [],
+    "actions": [{
+        "trigger": "speak",
+        "params": ["R9"]
+    }]
+}, {
+    "trigger": "answerRight",
+    "params": [],
+    "actions": [{
+        "trigger": "speak",
+        "params": ["G7"]
+    }, {
+        "trigger": "speak",
+        "params": ["R10"]
+    }, {
+        "trigger": "hide",
+        "params": ["ruby"]
+    }, {
+        "trigger": "set-inventory",
+        "params": ["rubies", "5"]
+    }]
+}, {
+    "trigger": "answerWrong",
+    "params": [],
+    "actions": [{
+        "trigger": "speak",
+        "params": ["R12"]
+    }]
+}, {
+    "trigger": "answerRight",
+    "params": [],
+    "actions": [{
+        "trigger": "speak",
+        "params": ["R11"]
+    }]
+}, {
+    "trigger": "answerRight",
+    "params": [],
+    "actions": [{
+        "trigger": "show",
+        "params": ["mechanic"]
+    }, {
+        "trigger": "show",
+        "params": ["toolbox-closed"]
+    }, {
+        "trigger": "speak",
+        "params": ["M1"]
+    }, {
+        "trigger": "speak R13",
+        "params": []
+    }]
+}, {
+    "trigger": "answerWrong",
+    "params": [],
+    "actions": [{
+        "trigger": "speak",
+        "params": ["R15"]
+    }]
+}, {
+    "trigger": "answerRight",
+    "params": [],
+    "actions": [{
+        "trigger": "speak",
+        "params": ["R14"]
+    }, {
+        "trigger": "hide",
+        "params": ["toolbox-closed"]
+    }, {
+        "trigger": "show",
+        "params": ["toolbox-open"]
+    }, {
+        "trigger": "show",
+        "params": ["revidwercs", "BOLTS", "east", "aLLEN-KEY", "MAEB-RESAL", "nail"]
+    }, {
+        "trigger": "speak",
+        "params": ["M2"]
+    }, {
+        "trigger": "speak",
+        "params": ["R16"]
+    }]
+}, {
+    "trigger": "answerWrong",
+    "params": [],
+    "actions": [{
+        "trigger": "speak",
+        "params": ["R18"]
+    }]
+}, {
+    "trigger": "answerRight",
+    "params": [],
+    "actions": [{
+        "trigger": "speak",
+        "params": ["R17"]
+    }, {
+        "trigger": "speak",
+        "params": ["R19"]
+    }]
+}, {
+    "trigger": "answerWrong",
+    "params": [],
+    "actions": [{
+        "trigger": "speak",
+        "params": ["R19"]
+    }]
+}, {
+    "trigger": "answerRight",
+    "params": [],
+    "actions": [{
+        "trigger": "speak",
+        "params": ["M3"]
+    }, {
+        "trigger": "hide",
+        "params": ["revidwercs"]
+    }, {
+        "trigger": "show",
+        "params": ["screwdriver"]
+    }, {
+        "trigger": "speak",
+        "params": ["R20"]
+    }]
+}, {
+    "trigger": "answerWrong",
+    "params": [],
+    "actions": [{
+        "trigger": "speak",
+        "params": ["R20"]
+    }]
+}, {
+    "trigger": "answerRight",
+    "params": [],
+    "actions": [{
+        "trigger": "speak",
+        "params": ["M4"]
+    }, {
+        "trigger": "hide",
+        "params": ["BOLTS"]
+    }, {
+        "trigger": "show",
+        "params": ["bolts"]
+    }, {
+        "trigger": "speak",
+        "params": ["R21"]
+    }]
+}, {
+    "trigger": "answerWrong",
+    "params": [],
+    "actions": [{
+        "trigger": "speak",
+        "params": ["R21"]
+    }]
+}, {
+    "trigger": "answerRight",
+    "params": [],
+    "actions": [{
+        "trigger": "speak",
+        "params": ["M5"]
+    }, {
+        "trigger": "hide",
+        "params": ["sast"]
+    }, {
+        "trigger": "show",
+        "params": ["SAST"]
+    }, {
+        "trigger": "speak",
+        "params": ["R22"]
+    }]
+}, {
+    "trigger": "answerWrong",
+    "params": [],
+    "actions": [{
+        "trigger": "speak",
+        "params": ["R22"]
+    }]
+}, {
+    "trigger": "answerRight",
+    "params": [],
+    "actions": [{
+        "trigger": "speak",
+        "params": ["M5"]
+    }, {
+        "trigger": "hide",
+        "params": ["aLLEN-KEY"]
+    }, {
+        "trigger": "show",
+        "params": ["Allen-key"]
+    }, {
+        "trigger": "speak",
+        "params": ["R23"]
+    }]
+}, {
+    "trigger": "answerWrong",
+    "params": [],
+    "actions": [{
+        "trigger": "speak",
+        "params": ["R23"]
+    }]
+}, {
+    "trigger": "answerRight",
+    "params": [],
+    "actions": [{
+        "trigger": "speak",
+        "params": ["R6"]
+    }, {
+        "trigger": "hide",
+        "params": ["MAEB RESAL"]
+    }, {
+        "trigger": "show",
+        "params": ["lazer beam"]
+    }, {
+        "trigger": "speak",
+        "params": ["M7"]
+    }, {
+        "trigger": "speak",
+        "params": ["R24"]
+    }]
+}, {
+    "trigger": "answerWrong",
+    "params": [],
+    "actions": [{
+        "trigger": "speak",
+        "params": ["R24"]
+    }]
+}, {
+    "trigger": "answerRight",
+    "params": [],
+    "actions": [{
+        "trigger": "hide",
+        "params": ["nail"]
+    }, {
+        "trigger": "show",
+        "params": ["nail", "nail", "nail", "nail", "nail"]
+    }, {
+        "trigger": "speak",
+        "params": ["M8"]
+    }]
+}]

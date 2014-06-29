@@ -38,6 +38,8 @@ var Game = function(channel) {
         game.load.image('gem-active', 'images/gem-active.png');
         game.load.image('sun', 'images/sun.png');
         game.load.image('ground', 'images/bar.png');
+        game.load.image('moneybag', 'images/moneybag.png');
+
     }
 
 
@@ -54,6 +56,7 @@ var Game = function(channel) {
         setupGround();
         setupPlayer();
         setupGems();
+        setupMoneyBag();
 
         game.eventChannel = {};
         // Bind inputs
@@ -123,14 +126,23 @@ var Game = function(channel) {
 
         for (var i = 0; i < 5; i++) {
             if (i < 3) {
-                var gem = gems.create((window_width * 0.68) - 400 + (90 * i), 50, 'gem-active');
+                var gem = gems.create((window_width * 0.68) - 560 + (90 * i), 50, 'gem-active');
             } else {
-                var gem = gems.create((window_width * 0.68) - 400 + (90 * i), 50, 'gem-inactive');
+                var gem = gems.create((window_width * 0.68) - 560 + (90 * i), 50, 'gem-inactive');
             }
             gem.anchor.setTo(0.5, 0.5);
         }
 
         gems.fixedToCamera = true;
+    }
+
+    function setupMoneyBag() {
+        chest = game.add.group();
+
+        var bag = gems.create((window_width * 0.68) - 60, 50, 'moneybag');
+        bag.anchor.setTo(0.5, 0.5);
+
+        chest.fixedToCamera = true;
     }
 
     /* x and y are percents of the width/height in decimal from the top left corner */
@@ -193,7 +205,36 @@ var Game = function(channel) {
     function playerCanJump() {
         var h = ground.position.y;
         var p = player.position.y - 151;
-
         return ((p + 0.5) > h && h > (p - 0.5));
+    }
+
+    function eventShow(params) {
+        var allObjects
+        var objsToShow = []
+        for (object in params) {
+            if (allObjects.indexOf(object) != -1) {
+                objsToShow.push(object)
+            };
+        }
+        for (object in objsToShow) {
+            show(object)
+        }
+    }
+
+    function show(object) {
+        //show
+    }
+
+    function nextDialogue(characterName, dialogueArray, deleteDialogue) {
+        var json = JSON.parse(dialogueArray)
+        for (dialogue in json) {
+            var index = json.indexOf(dialogueArray);
+            if (dialogue.character == characterName) {
+                if (deleteDialogue) {
+                    delete json[index]
+                };
+                return dialogue
+            }
+        }
     }
 }

@@ -72,13 +72,14 @@ function create() {
 
 function setupSprites() {
   addSprite(game, 'sun', 0.5, 0.65);
-  game.add.sprite(window_width * 0.8, game.world.height - 380, 'spaceship');
 
   for (var i = 0; i < 3; i++) {
     addSprite(game, 'cloud1', -0.05 + i, randomHeightPercent(0.0, 0.3));
     addSprite(game, 'cloud2', 0.6 + i, randomHeightPercent(0.5, 0.7));
     addSprite(game, 'birds', 0.48 + i, Math.random());
   }
+
+  game.add.sprite(window_width * 0.8, game.world.height - 380, 'spaceship');
 }
 
 function setupGround() {

@@ -28,6 +28,7 @@ var Game = function() {
         game.load.image('gem-active', 'images/gem-active.png');
         game.load.image('sun', 'images/sun.png');
         game.load.image('ground', 'images/bar.png');
+        game.load.image('moneybag', 'images/moneybag.png');
     }
 
     /* Variables */
@@ -55,6 +56,7 @@ var Game = function() {
         setupGround();
         setupPlayer();
         setupGems();
+        setupMoneyBag();
 
         game.eventChannel = {};
         // Bind inputs
@@ -120,18 +122,27 @@ var Game = function() {
     }
 
     function setupGems() {
-        gems = game.add.group();
+      gems = game.add.group();
 
-        for (var i = 0; i < 5; i++) {
-            if (i < 3) {
-                var gem = gems.create((window_width * 0.68) - 400 + (90 * i), 50, 'gem-active');
-            } else {
-                var gem = gems.create((window_width * 0.68) - 400 + (90 * i), 50, 'gem-inactive');
-            }
-            gem.anchor.setTo(0.5, 0.5);
+      for (var i = 0; i < 5; i++) {
+        if (i < 3) {
+          var gem = gems.create((window_width * 0.68) - 560 + (90 * i), 50, 'gem-active');
+        } else {
+          var gem = gems.create((window_width * 0.68) - 560 + (90 * i), 50, 'gem-inactive');
         }
+        gem.anchor.setTo(0.5, 0.5);
+      }
 
-        gems.fixedToCamera = true;
+      gems.fixedToCamera = true;
+    }
+
+    function setupMoneyBag() {
+      chest = game.add.group();
+
+      var bag = gems.create((window_width * 0.68) - 60, 50, 'moneybag');
+      bag.anchor.setTo(0.5, 0.5);
+
+      chest.fixedToCamera = true;
     }
 
     /* x and y are percents of the width/height in decimal from the top left corner */

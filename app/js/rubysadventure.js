@@ -37,7 +37,7 @@ var ground;
 function create() {
   //Enabled Arcade Physics system
   game.physics.startSystem(Phaser.Physics.ARCADE);
-  
+
   //  Make the world larger than the actual canvas
   game.world.setBounds(0, 0, window_width * 2, window_height);
 
@@ -45,11 +45,14 @@ function create() {
   bg = game.add.tileSprite(0, 0, window_width, window_height, 'background');
   bg.fixedToCamera = true;
 
-  addSprite(game, 'spaceship', 0.32, 0.58);
   addSprite(game, 'sun', 0.5, 0.65);
-  addSprite(game, 'cloud1', -0.05, 0.1);
-  addSprite(game, 'cloud2', 0.6, 0.5);
-  addSprite(game, 'birds', 0.48, 0.1);
+  game.add.sprite(window_width * 0.8, game.world.height - 380, 'spaceship');
+
+  for (var i = 0; i < 3; i++) {
+    addSprite(game, 'cloud1', -0.05 + i, randomHeightPercent(0.0, 0.3));
+    addSprite(game, 'cloud2', 0.6 + i, randomHeightPercent(0.5, 0.7));
+    addSprite(game, 'birds', 0.48 + i, Math.random());
+  }
 
   // The platforms group contains the ground and possibly other ledges
   platforms = game.add.group();
@@ -134,3 +137,15 @@ function update() {
 
 }
 
+function randomHeightPercent(lower, higher) {
+  var number = Math.random();
+  while (number < lower || number > higher) {
+    if(number < lower) {
+      number = number + lower;
+    }
+    if(number > higher) {
+      number = number - higher
+    }
+  }
+  return number;
+}

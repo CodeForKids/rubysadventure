@@ -1,116 +1,155 @@
 Ruby (TQ): Where am I?
 Ruby (TQ): Maybe that ghost can help me…
 
+G1
 Ghost: puts “Hello”
 Ghost: Hello
 
+R2
 Ruby (TQ): I need to use the Ruby language to talk. In Ruby, a group of words or letters make a string. Here are some strings: “Ruby”, “Hello, world”, “Bacon pancakes”
 Ruby (TQ): When you use the command ‘puts’, it tells me to say the words in the string.
 Ruby (TQ): Please type: puts “Hello” to help me say hello. 
 
+R3
 Ruby: puts “Hello”
 Ruby: Hello
 
+G2
 Ghost: puts “What is your name?”
 Ghost: What is your name?
 
+R4
 Ruby (TQ): Please type: puts “My name is Ruby”
 
+R5
 Ruby: puts “My name is Ruby”
 Ruby: Ruby
 
+G3
 Ghost: puts “My name is Van Ghost”
 Ghost: My name is Van Ghost
 Ghost: puts “Do you need help fixing your spaceship?”
 Ghost: Do you need help fixing your spaceship?
 
+R6
 Ruby (TQ): Please type: puts “Yes, please”
 
+R7
 Ruby: puts “Yes, please”
 Ruby: Yes, please
 
+G4
 Ghost: puts “Find rubies to fix your spaceship! Keep exploring and you’ll find some.”
 Ghost: Find rubies to fix your spaceship! Keep exploring and you’ll find some.
 
+G5
 Ghost: puts “You should put your rubies in the bank”
 Ghost: You should put your rubies in the bank
 
+R8
 Ruby (TQ): Let’s use the Ruby language to keep track of my rubies
 Ruby (TQ): Please type: rubies = 3 to put my 3 rubies in the bank
 
+G6
 Ghost: puts “Here is a ruby for you”
 Ghost: Here is a ruby for you
 
+R9
 Ruby (TQ): Let’s use Ruby to add this ruby to the bank
 Ruby (TQ): Please type: rubies += 1 to add my ruby to the bank
 
+G7
 Ghost: puts “Explore the world and find more rubies!”
 Ghost: Explore the world and find more rubies!
 Ghost: puts “Good luck!”
 Ghost: Good luck!
 
+R10
 Ruby (TQ): Please help me say “Thank you”
 
+R11
 Ruby: puts “Thank you”
 Ruby: Thank you
 
+R12
 Ruby (TQ): Please type: puts “Thank you”
 
+M1
 Mechanic: puts “Hello”
 Mechanic: Hello
 
+R13
 Ruby (TQ): Please help me say “Hello”
 
+R14
 Ruby: puts “Hello”
 Ruby: Hello
 
+R15
 Ruby (TQ): Please type: puts “Hello” to help me say hello
 
+M2
 Mechanic: puts “My toolbox is a mess! The letters are lost and confused!”
 Mechanic: My toolbox is a mess! The letters are lost and confused!
 
+R16
 Ruby (TQ): Please help me say “I can help you”
 
+R17
 Ruby: puts “I can help you”
 Ruby: I can help you
 
+R18
 Ruby (TQ): Please type: puts “I can help you”
 
+R19
 Ruby (TQ): Looks like the screwdriver is backwards. To flip a string around in Ruby, you can use the command “reverse”.
 Ruby (TQ): Try typing this: “revidrwercs”.reverse
 
+M3
 Mechanic: puts “Good job! Way to turn things around!”
 Mechanic: Good job! Way to turn things around!
 
+R20
 Ruby (TQ): Looks like the bolts are all in uppercase. To make a string lowercase in Ruby, you can use the command “downcase”.
 Ruby (TQ): Try typing this: “BOLTS”.downcase
 
+M4
 Mechanic: puts “Nicely done!”
 Mechanic: Nicely done
 
+R21
 Ruby (TQ): Looks like the Super Awesome Spaceship Tool (SAST) needs to be in uppercase. To make a string uppercase in Ruby, you can use the command “up case”.
 Ruby (TQ): Try typing this: “sast”.upcase
 
+M5
 Mechanic: puts “Out of this world!”
 Mechanic: Out of this world!
 
+R22
 Ruby (TQ): Looks like the Allen key letters are all in the wrong case. To switch all the cases in a string in the Ruby language, you can use the command “swapcase”.
 Ruby (TQ): Try typing this: “aLLEN KEY”.swapcase 
 
+M5
 Mechanic: puts “You’ve got the key to success”
 Mechanic: You’ve got the key to success
 
+R23
 Ruby (TQ): Uh oh. The laser beam is both uppercase and backwards. What now?
 Ruby (TQ): You can use the Ruby language to change a string in many ways at once. Try typing this: “MAEB RESAL”.downcase.reverse
 
+M6
 Mechanic: puts “Smashing work”
 Mechanic: Smashing work
 
+M7
 Mechanic: puts “Uh oh. There’s only one nail in the toolbox. You need 5 nails to fix your spaceship.”
 Mechanic: Uh oh. There’s only one nail in the toolbox. You need 5 nails to fix your spaceship.
 
+R24
 Ruby (TQ): To repeat a string in the Ruby language, you can use the multiplication sign *. Try typing this: “nail” * 5
 
+M8
 Mechanic: puts “Nailed it!”
 Mechanic: Nailed it
 

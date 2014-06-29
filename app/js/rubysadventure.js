@@ -207,13 +207,13 @@ var Game = function(channel) {
   function eventShow(params) {
     var allObjects
     var objsToShow = []
-    for (object in params) {
-        if (allObjects.indexOf(object) != -1) {
-            objsToShow.push(object)
+    for (index in params) {
+        if (allObjects.indexOf(params[index]) != -1) {
+            objsToShow.push(params[index])
         };
     }
-    for (object in objsToShow) {
-        show(object)
+    for (index in objsToShow) {
+        show(objsToShow[index])
     }
   }
 
@@ -223,13 +223,12 @@ var Game = function(channel) {
 
   function nextDialogue(characterName, dialogueArray, deleteDialogue) {
     var json = JSON.parse(dialogueArray)
-    for (dialogue in json) {
-        var index = json.indexOf(dialogueArray);
-        if (dialogue.character == characterName) {
+    for (index in json) {
+        if (json[index].character == characterName) {
             if (deleteDialogue) {
                 delete json[index]
             };
-            return dialogue
+            return json[index]
         }
     }
   }

@@ -11125,7 +11125,7 @@ var FontMetrics = exports.FontMetrics = function(parentEl, interval) {
     this.$setMeasureNodeStyles = function(style, isRoot) {
         style.width = style.height = "auto";
         style.left = style.top = "-100px";
-        style.visibility = "hidden";
+        style.visibility = "w";
         style.position = "fixed";
         style.whiteSpace = "pre";
 

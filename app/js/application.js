@@ -54,6 +54,8 @@ $(document).ready(function(){
 
   editor.setValue("Type \"puts 'Hello World'\"");
 
+  var game = new Game(channel);
+
 });
 
 function postToServer(code) {

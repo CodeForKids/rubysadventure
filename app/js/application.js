@@ -1,6 +1,17 @@
 $(document).ready(function(){
 
   channel = new EventChannel();
+  channel.events = [{"target": "answerRight", "params": [] , actions: [{"target": "answerRight", "params": null}]}]
+  channel.answerRight = function() {
+    message = "=> " + user_answer + "\n"
+    message = message + "That wasn right! :)"
+    window.editor.setValue(window.editor.getSession().getValue() + "\n" + message, 1);
+  }
+  channel.answerWrong = function() {
+    message = "=> " + user_answer + "\n"
+    message = message + "That wasn't right :("
+    window.editor.setValue(window.editor.getSession().getValue() + "\n" + message, 1);
+  }
   // Editor For Information
   var editor = ace.edit("editor");
   editor.setTheme("ace/theme/twilight");
@@ -43,8 +54,6 @@ $(document).ready(function(){
 
   editor.setValue("Type \"puts 'Hello World'\"");
 
-  var game = new Game(channel);
-
 });
 
 function postToServer(code) {
@@ -63,17 +72,12 @@ function postToServer(code) {
 
 function parseResults(data) {
   json = JSON.parse(data);
-
-  var message = "";
   var user_answer = json.user_answer
   if (json.success) {
-    message = "=> " + user_answer + "\n"
-    message = message + "That was right! :)";
+    channel.trigger('answerRight');
   } else {
-    message = "=> " + user_answer + "\n"
-    message = message + "That wasn't right :("
+    channel.trigger('answerWrong');
   }
-  window.editor.setValue(window.editor.getSession().getValue() + "\n" + message, 1);
 }
 
 function pressKey(code) {

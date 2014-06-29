@@ -1,14 +1,17 @@
 $(document).ready(function(){
 
   channel = new EventChannel();
-  channel.events = [{"target": "answerRight", "params": [] , actions: [{"target": "answerRight", "params": null}]}]
-  channel.answerRight = function() {
-    message = "=> " + user_answer + "\n"
-    message = message + "That wasn right! :)"
+  var json = $.get('/events.json', function(data) {
+    channel.events = data;
+  });
+
+  channel.answerRight = function(user_answer) {
+    message = "=> " + user_answer[0] + "\n"
+    message = message + "That was right! :)"
     window.editor.setValue(window.editor.getSession().getValue() + "\n" + message, 1);
   }
-  channel.answerWrong = function() {
-    message = "=> " + user_answer + "\n"
+  channel.answerWrong = function(user_answer) {
+    message = "=> " + user_answer[0] + "\n"
     message = message + "That wasn't right :("
     window.editor.setValue(window.editor.getSession().getValue() + "\n" + message, 1);
   }
@@ -76,9 +79,9 @@ function parseResults(data) {
   json = JSON.parse(data);
   var user_answer = json.user_answer
   if (json.success) {
-    channel.trigger('answerRight');
+    channel.trigger('answerRight',[],[user_answer]);
   } else {
-    channel.trigger('answerWrong');
+    channel.trigger('answerWrong',[],[user_answer]);
   }
 }
 

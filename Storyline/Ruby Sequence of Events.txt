@@ -1,5 +1,5 @@
 target: start
-action: speak, R1 
+action: speak, R1
 action: show, arrow keys up, left, right
 action: show, Van Ghost
 
@@ -7,25 +7,25 @@ target: collision, Van Ghost, ruby
 action: speak, G1
 action: speak, R2
 
-target: answer-wrong
+target: answerWrong
 action: speak, R2
 
-target: answer-right
+target: answerRight
 action: speak, R3
 action: speak, G2
 action: speak, R4
 
-target: answer-wrong
+target: answerWrong
 action: speak, R4
 
-target: answer-right 
+target: answerRight
 action: speak, R5
 action: speak, G3
 
-target: answer-wrong
+target: answerWrong
 action: speak, R6
 
-target: answer-right
+target: answerRight
 action: speak, R7
 action: speak, G4
 
@@ -33,45 +33,45 @@ target: collision, ruby, gem
 action: hide, ruby
 action: set-inventory, rubies, 1
 
-target: answer-right
-action: show, Van Ghost 
+target: answerRight
+action: show, Van Ghost
 action: speak, G5
 action: speak, R8
 
-Target: answer-wrong
-action: speak, R8 
+Target: answerWrong
+action: speak, R8
 
-target: answer-right
+target: answerRight
 action: speak, G6
 action: speak, R9
 action: set-inventory, rubies, 4
 action: show, gem
 
-target: answer-wrong
+target: answerWrong
 action: speak, R9
 
-target: answer-right
+target: answerRight
 action: speak, G7
 action: speak, R10
 action: hide, ruby
 action: set-inventory, rubies, 5
 
-target: answer-wrong
+target: answerWrong
 action: speak, R12
 
-target: answer-right
+target: answerRight
 action: speak, R11
 
-target: answer-right
+target: answerRight
 action: show, mechanic
 action: show, toolbox-closed
 action: speak, M1
 action: speak R13
 
-target: answer-wrong
+target: answerWrong
 action: speak, R15
 
-target: answer-right
+target: answerRight
 action: speak, R14
 action: hide, toolbox-closed
 action: show, toolbox-open
@@ -79,63 +79,63 @@ action: show, revidwercs, BOLTS, east, aLLEN-KEY, MAEB-RESAL, nail
 action: speak, M2
 action: speak, R16
 
-target: answer-wrong
+target: answerWrong
 action: speak, R18
 
-target: answer-right
+target: answerRight
 action: speak, R17
 action: speak, R19
 
-target: answer-wrong
+target: answerWrong
 action: speak, R19
 
-target: answer-right
+target: answerRight
 action: speak, M3
 action: hide, revidwercs
 action: show, screwdriver
 action: speak, R20
 
-target: answer-wrong
+target: answerWrong
 action: speak, R20
 
-target: answer-right
+target: answerRight
 action: speak, M4
 action: hide, BOLTS
 action: show, bolts
 action: speak, R21
 
-target: answer-wrong
+target: answerWrong
 action: speak, R21
 
-target: answer-right
+target: answerRight
 action: speak, M5
 action: hide, sast
 action: show, SAST
 action: speak, R22
 
-target: answer-wrong
+target: answerWrong
 action: speak, R22
 
-target: answer-right
+target: answerRight
 action: speak, M5
 action: hide, aLLEN-KEY
 action: show, Allen-key
 action: speak, R23
 
-target: answer-wrong
+target: answerWrong
 action: speak, R23
 
-target: answer-right
+target: answerRight
 action: speak, R6
 action: hide, MAEB RESAL
 action: show, lazer beam
 action: speak, M7
 action: speak, R24
 
-target: answer-wrong
+target: answerWrong
 action: speak, R24
 
-target: answer-right
+target: answerRight
 action: hide, nail
 action: show, nail, nail, nail, nail, nail
 action: speak, M8

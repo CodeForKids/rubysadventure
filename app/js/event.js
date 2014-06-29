@@ -1,18 +1,21 @@
 var EventChannel = function(){
-  this.trigger = function(name, params) {
+  this.trigger = function(name, filters, user_params) {
     try {
-      for(e in events) {
-        if(e["target"] == name){
+      for(var i = 0; i < this.events.length; i++) {
+        var e = this.events[i];
+        if(e["trigger"] == name){
           var found = true;
-          for(i = 0; i < params.length; i++) {
-            if(params[i] != e["params"][i]){
+          for(i = 0; i < filters.length; i++) {
+            if(filters[i] != e["params"][i]){
               found = false;
               break;
             }
           }
           if(found) {
-            for(action in e["actions"]) {
-              this[action["target"]](action["params"]);
+            for(var i = 0; i < e["actions"].length; i++) {
+              action = e["actions"][i];
+              var params = action["params"].concat(user_params)
+              this[action["trigger"]](params);
             }
             return;
           }

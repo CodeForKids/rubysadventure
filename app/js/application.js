@@ -3,12 +3,12 @@ var dialogue;
 $(document).ready(function(){
   channel = setupChannel();
 
-  // Editor For Information
-  var editor = setupEditor();
+  // // Editor For Information
+  // var editor = setupEditor();
 
-  // Command Input
-  var input_editor = setupInputEditor();
-  overrideEditorArrows(input_editor);
+  // // Command Input
+  // var input_editor = setupInputEditor();
+  // overrideEditorArrows(input_editor);
 
   window.game = new Game(channel);
 });

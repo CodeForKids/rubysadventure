@@ -59,8 +59,8 @@ var Game = function(channel) {
 
     setupGround();
     setupPlayer();
-    setupGems();
-    setupMoneyBag();
+    // setupGems();
+    // setupMoneyBag();
 
     game.eventChannel = {};
     // Bind inputs
@@ -90,7 +90,7 @@ var Game = function(channel) {
 
     game.add.sprite(window_width * 0.8, game.world.height - 380, 'spaceship');
 
-    crazyGhost = game.add.sprite(window_width * 0.4, game.world.height - 400, 'crazy-ghost');
+    crazyGhost = game.add.sprite(window_width * 0.7, game.world.height - 400, 'crazy-ghost');
     game.physics.enable(crazyGhost, Phaser.Physics.ARCADE);
     crazyGhost.body.immovable = true;
   }

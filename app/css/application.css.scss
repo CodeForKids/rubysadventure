@@ -1,6 +1,6 @@
 /* == GENERAL == */
 #logo, #logo img {
-  height: 4.5em;
+  width: 90%;
 }
 
 #logo {
@@ -57,4 +57,13 @@ canvas {
   border-radius: 5px;
   background: rgba(255, 255, 255, 0.28);
   margin: 20px;
+  min-width: 400px;
+}
+
+@media screen and (max-width: 768px) {
+  .comingsoon {
+    left:0%;
+    width:100%;
+    margin: 0px;
+  }
 }

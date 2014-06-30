@@ -1,6 +1,6 @@
 var Game = function(channel) {
   /* Variables */
-  var window_width = $(window).width();
+  var window_width = 3000;
   var window_height = $(window).height();
   var map;
   var tileset;
@@ -29,6 +29,22 @@ var Game = function(channel) {
   }
   if (window_height < 720) {
       window_height = 720;
+  }
+
+  $(window).resize(function() { resizeGame(); } );
+  function resizeGame() {
+    var height = $(window).height();
+    var width = $(window).width();
+
+    game.width = width;
+    game.height = height;
+    game.stage.bounds.width = width;
+    game.stage.bounds.height = height;
+
+    if (game.renderType === Phaser.WEBGL)
+    {
+      game.renderer.resize(width, height);
+    }
   }
 
   function preload() {
@@ -90,7 +106,7 @@ var Game = function(channel) {
 
     game.add.sprite(window_width * 0.8, game.world.height - 380, 'spaceship');
 
-    crazyGhost = game.add.sprite(window_width * 0.7, game.world.height - 400, 'crazy-ghost');
+    crazyGhost = game.add.sprite(window_width * 0.4, game.world.height - 400, 'crazy-ghost');
     game.physics.enable(crazyGhost, Phaser.Physics.ARCADE);
     crazyGhost.body.immovable = true;
   }
